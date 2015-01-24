@@ -1564,7 +1564,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
-  m_Height: 2
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &858805835
@@ -1751,6 +1751,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1046616271}
+  - 54: {fileID: 1046616272}
   m_Layer: 8
   m_Name: GrabPoint
   m_TagString: Untagged
@@ -1770,6 +1771,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1668604942}
   m_RootOrder: 0
+--- !u!54 &1046616272
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046616270}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1047771035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,7 +4178,7 @@ Rigidbody:
   m_GameObject: {fileID: 2138224606}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: .200000003
+  m_Drag: 3
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -4182,9 +4198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pcam: {fileID: 1086057920}
-  forward_move_speed: 15
-  backward_move_speed: 15
-  strafe_move_speed: 15
+  forward_move_speed: 40
+  backward_move_speed: 40
+  strafe_move_speed: 40
   right_left_look_speed: 5
   up_down_look_speed: 5
   look_bounds: 60
@@ -4201,7 +4217,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
-  m_Height: 2
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2138224611
@@ -4217,7 +4233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 500
-  grabBreakTolerance: 2.5
+  grabBreakTolerance: 1.29999995
   grabEaseValue: 1.5
   grabAngularEaseValue: 12
   floorYPosition: -2

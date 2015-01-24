@@ -15,6 +15,7 @@ public class PlayerGrab : MonoBehaviour {
     GameObject myGrabbedGameObject;
     Camera pcam;
     Collider myGrabbedCollider;
+    SpringJoint grabbedSpring;
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +45,7 @@ public class PlayerGrab : MonoBehaviour {
                     RaycastHit hit;
                     if (Physics.Linecast(transform.position, grabTransform.position, out hit, layerfilter))
                     {
-                        if (hit.collider != null)
+                        if (hit.rigidbody != null)
                         {
                             myGrabbedCollider = hit.collider;
                             myGrabbedGameObject = hit.transform.gameObject;
@@ -98,11 +99,14 @@ public class PlayerGrab : MonoBehaviour {
                 myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.angularVelocity;
                 //Prevent clipping
 
-                if (myGrabbedGameObject.collider.bounds.min.y + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < floorYPosition)
+                float minBoundY = myGrabbedGameObject.transform.position.y;
+                foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>()) {
+                    if (col.bounds.min.y < minBoundY)
+                        minBoundY = col.bounds.min.y;
+                }
+                if (minBoundY + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < floorYPosition)
                 {
-                    float calculatedYCenter = (myGrabbedGameObject.collider.bounds.min.y + myGrabbedGameObject.collider.bounds.max.y) / 2;
-                    //myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedCollider.bounds.extents.y + myGrabbedGameObject.transform.position.y - calculatedYCenter, myGrabbedGameObject.transform.position.z);
-                    myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - myGrabbedGameObject.collider.bounds.min.y, myGrabbedGameObject.transform.position.z);
+                    myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - minBoundY, myGrabbedGameObject.transform.position.z);
                     myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, 0f, myGrabbedGameObject.rigidbody.velocity.z);
                 }
             }
