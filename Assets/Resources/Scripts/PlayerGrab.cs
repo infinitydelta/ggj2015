@@ -104,6 +104,10 @@ public class PlayerGrab : MonoBehaviour {
                     if (col.bounds.min.y < minBoundY)
                         minBoundY = col.bounds.min.y;
                 }
+                foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>()) {
+                    if (col.bounds.min.y < minBoundY)
+                        minBoundY = col.bounds.min.y;
+                }
                 if (minBoundY + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < floorYPosition)
                 {
                     myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - minBoundY, myGrabbedGameObject.transform.position.z);
