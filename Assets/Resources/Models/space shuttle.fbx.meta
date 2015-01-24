@@ -1,25 +1,45 @@
 fileFormatVersion: 2
-guid: 7c525aac4a9426445b22a15608e8cbe3
+guid: e1df28fa09a82f045ac7ed5c99003a18
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: bot
-    100004: pCube14
-    100006: top
-    400000: //RootNode
-    400002: bot
-    400004: pCube14
-    400006: top
-    2300000: bot
-    2300002: pCube14
-    2300004: top
-    3300000: bot
-    3300002: pCube14
-    3300004: top
-    4300000: pCube14
-    4300002: bot
-    4300004: top
+    100000: body
+    100002: cockpit
+    100004: //RootNode
+    100006: thruster
+    100008: thruster1
+    100010: thruster2
+    100012: wing
+    100014: wing1
+    400000: body
+    400002: cockpit
+    400004: //RootNode
+    400006: thruster
+    400008: thruster1
+    400010: thruster2
+    400012: wing
+    400014: wing1
+    2300000: body
+    2300002: cockpit
+    2300004: thruster
+    2300006: thruster1
+    2300008: thruster2
+    2300010: wing
+    2300012: wing1
+    3300000: body
+    3300002: cockpit
+    3300004: thruster
+    3300006: thruster1
+    3300008: thruster2
+    3300010: wing
+    3300012: wing1
+    4300000: body
+    4300002: cockpit
+    4300004: wing
+    4300006: wing1
+    4300008: thruster
+    4300010: thruster1
+    4300012: thruster2
     9500000: //RootNode
   materials:
     importMaterials: 0

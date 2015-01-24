@@ -1,28 +1,23 @@
 fileFormatVersion: 2
-guid: 7c525aac4a9426445b22a15608e8cbe3
+guid: 03f3de4761307744a95e10c05ffc1684
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: bot
-    100004: pCube14
-    100006: top
-    400000: //RootNode
-    400002: bot
-    400004: pCube14
-    400006: top
-    2300000: bot
-    2300002: pCube14
-    2300004: top
-    3300000: bot
-    3300002: pCube14
-    3300004: top
-    4300000: pCube14
-    4300002: bot
-    4300004: top
+    100000: backing
+    100002: frame
+    100004: //RootNode
+    400000: backing
+    400002: frame
+    400004: //RootNode
+    2300000: backing
+    2300002: frame
+    3300000: backing
+    3300002: frame
+    4300000: frame
+    4300002: backing
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -40,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -58,7 +53,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
