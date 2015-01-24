@@ -18,7 +18,6 @@ public class PlayerMotion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 	}
 
 	public void GroundEnter() {
@@ -47,7 +46,8 @@ public class PlayerMotion : MonoBehaviour {
 		udRot += dudRot * up_down_look_speed;
 		rlRot += drlRot * right_left_look_speed;
 		udRot = Mathf.Clamp(udRot,-look_bounds,look_bounds);
-		pcam.transform.rotation = Quaternion.Euler(udRot,rlRot,0);
+        transform.rotation = Quaternion.Euler(0, rlRot, 0);
+        pcam.transform.rotation = Quaternion.Euler(udRot, rlRot, 0);
 
 
 		//fov
