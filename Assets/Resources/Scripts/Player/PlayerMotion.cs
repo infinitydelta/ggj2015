@@ -10,11 +10,11 @@ public class PlayerMotion : MonoBehaviour {
 	public float up_down_look_speed = 5; //up down look speed
 	public float look_bounds = 60; //look bounds
 	public float jump_force = 100; //jump force
+    public int controllerNumber;
 	float udRot;
 	float rlRot;
 	bool grounded = false;
-	bool keyjumping = false;
-	bool contjumping = false;
+	bool jumping = false;
 
 	// Use this for initialization
 	void Start () {
@@ -39,18 +39,10 @@ public class PlayerMotion : MonoBehaviour {
 
 		//camera rotation
 		float drlRot = 0; //right/left rotation
-		if(Input.GetAxis("Mouse X")!=0){
-			drlRot = Input.GetAxis("Mouse X"); 
-		}else if(Input.GetAxis("Horizontal2")!=0){
-			drlRot = Input.GetAxis("Horizontal2");
-		}
+        drlRot = Input.GetAxis("p" + controllerNumber + "_LookX"); 
 
 		float dudRot = 0; //up/down rotation
-		if(Input.GetAxis("Mouse Y")!=0){
-			dudRot = -Input.GetAxis("Mouse Y");
-		}else if(Input.GetAxis("Vertical2")!=0){
-			dudRot = Input.GetAxis("Vertical2");
-		}
+        dudRot = Input.GetAxis("p" + controllerNumber + "_LookY");
 
 		udRot += dudRot * up_down_look_speed;
 		rlRot += drlRot * right_left_look_speed;
@@ -71,28 +63,31 @@ public class PlayerMotion : MonoBehaviour {
 			Screen.lockCursor = true;
 		}
 		
-		if(Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical")>0){
+		if(Input.GetAxis("p" + controllerNumber + "_MoveY") > 0){
 			Vector3 mvec = pcam.transform.forward;
 			mvec.y = 0;
 			mvec.Normalize();
 			rigidbody.AddForce(mvec * forward_move_speed);
 		}
-		
-		if(Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal")<0){
+
+        if (Input.GetAxis("p" + controllerNumber + "_MoveX") < 0)
+        {
 			Vector3 mvec = -pcam.transform.right;
 			mvec.y = 0;
 			mvec.Normalize();
 			rigidbody.AddForce(mvec * strafe_move_speed);
 		}
-		
-		if(Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical")<0){
+
+        if (Input.GetAxis("p" + controllerNumber + "_MoveY") < 0)
+        {
 			Vector3 mvec = -pcam.transform.forward;
 			mvec.y = 0;
 			mvec.Normalize();
 			rigidbody.AddForce(mvec * backward_move_speed);
 		}
-		
-		if(Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal")>0){
+
+        if (Input.GetAxis("p" + controllerNumber + "_MoveX") > 0)
+        {
 			Vector3 mvec = pcam.transform.right;
 			mvec.y = 0;
 			mvec.Normalize();
@@ -100,23 +95,19 @@ public class PlayerMotion : MonoBehaviour {
 		}
 		
 		//jumping
-		if(Input.GetKey(KeyCode.Space) == false){
-			keyjumping=false;
+        if (Input.GetAxis("p" + controllerNumber + "_Jump") != 1.0f)
+        {
+			jumping=false;
 		}
-		if(Input.GetKey(KeyCode.JoystickButton0) == false){
-			contjumping=false;
-		}
+
 		
 		if(grounded){
-			if((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.JoystickButton0)) && keyjumping == false && contjumping == false){
+            if (Input.GetAxis("p" + controllerNumber + "_Jump") == 1.0f && jumping == false)
+            {
 				rigidbody.AddForce(Vector3.up * jump_force);
-				if(Input.GetKey(KeyCode.Space)){
-					keyjumping=true;
-				}else{
-					contjumping=true;
-				}
+                jumping = true;
 			}
 		}
-		}
+	}
 
 }
