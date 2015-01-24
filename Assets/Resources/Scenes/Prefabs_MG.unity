@@ -919,11 +919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425852, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
       propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11435776, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
-      propertyPath: floorYPosition
-      value: -1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
@@ -2566,7 +2562,7 @@ Transform:
   - {fileID: 1152580444}
   - {fileID: 1747839651}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &1919753451
 Prefab:
   m_ObjectHideFlags: 0
@@ -2719,7 +2715,7 @@ Transform:
   - {fileID: 155372564}
   - {fileID: 588385266}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!54 &1986929945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2729,7 +2725,7 @@ Rigidbody:
   m_GameObject: {fileID: 1986929943}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: .200000003
+  m_Drag: 3
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2749,9 +2745,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pcam: {fileID: 155372565}
-  forward_move_speed: 15
-  backward_move_speed: 15
-  strafe_move_speed: 15
+  forward_move_speed: 40
+  backward_move_speed: 40
+  strafe_move_speed: 40
   right_left_look_speed: 5
   up_down_look_speed: 5
   look_bounds: 60
@@ -2768,7 +2764,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
-  m_Height: 2
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1986929948
@@ -2784,10 +2780,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 500
-  grabBreakTolerance: 2.5
+  grabBreakTolerance: 1.29999995
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
-  floorYPosition: -1
+  floorYPosition: -2
 --- !u!1 &2057448916
 GameObject:
   m_ObjectHideFlags: 0

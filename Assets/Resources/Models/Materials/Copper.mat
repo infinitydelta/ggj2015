@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Green_Glass
+  m_Name: Copper
   m_Shader: {fileID: 4800000, guid: bb5e94ab83580614eb743450b27e670a, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -24,7 +24,7 @@ Material:
         first:
           name: _Ramp2D
         second:
-          m_Texture: {fileID: 2800000, guid: 05552217c8dbf4547a950e88280a28d0, type: 3}
+          m_Texture: {fileID: 2800000, guid: 45cd5aec42ff84845b4918de697248c2, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
