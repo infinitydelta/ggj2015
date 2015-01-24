@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 500
-  grabBreakTolerance: 2.5
+  grabBreakTolerance: 1.29999995
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
   floorYPosition: -2
@@ -2095,6 +2095,14 @@ Prefab:
     - target: {fileID: 125852, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435776, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
+      propertyPath: grabBreakTolerance
+      value: 1.29999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435776, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
+      propertyPath: grabEaseValue
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
