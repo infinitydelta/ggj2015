@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerGrab : MonoBehaviour {
     public float throwForce = 300f;
-    public float grabBreakTolerance = 2.5f;
+    public float grabBreakTolerance = 1.3f;
     public float grabEaseValue = 1.5f;
     public float grabAngularEaseValue = 8f;
     public float floorYPosition = -2f;
@@ -73,15 +73,7 @@ public class PlayerGrab : MonoBehaviour {
                 itemIsGrabbed = false;
             }
 
-
-            //Prevent clipping
             Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.transform.position);
-            myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + positionDiff / grabEaseValue;
-            if (myGrabbedGameObject.collider.bounds.min.y + positionDiff.y / grabEaseValue < floorYPosition)
-            {
-                myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - myGrabbedGameObject.collider.bounds.min.y, myGrabbedGameObject.transform.position.z);
-            }
-
             Vector3 angleDiff = new Vector3(0f, pcam.transform.eulerAngles.y - myGrabbedGameObject.transform.eulerAngles.y, 0f);
             if (angleDiff.x > 180f)
                 angleDiff.x -= 360f;
@@ -95,9 +87,18 @@ public class PlayerGrab : MonoBehaviour {
                 angleDiff.z -= 360f;
             if (angleDiff.z < -180f)
                 angleDiff.z += 360f;
-            myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + angleDiff / grabAngularEaseValue;
-            myGrabbedGameObject.rigidbody.velocity = Vector3.zero;
-            myGrabbedGameObject.rigidbody.angularVelocity = Vector3.zero;
+
+            myGrabbedGameObject.rigidbody.velocity = positionDiff / grabEaseValue;
+            myGrabbedGameObject.rigidbody.angularVelocity = angleDiff / grabAngularEaseValue;
+
+            myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity;
+            myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.angularVelocity;
+
+            //Prevent clipping
+            if (myGrabbedGameObject.collider.bounds.min.y + positionDiff.y / grabEaseValue < floorYPosition)
+            {
+                myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - myGrabbedGameObject.collider.bounds.min.y, myGrabbedGameObject.transform.position.z);
+            }
         }
 	}
 }
