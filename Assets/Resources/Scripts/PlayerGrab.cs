@@ -72,32 +72,34 @@ public class PlayerGrab : MonoBehaviour {
                 myGrabbedGameObject = null;
                 itemIsGrabbed = false;
             }
-
-            Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.transform.position);
-            Vector3 angleDiff = new Vector3(0f, pcam.transform.eulerAngles.y - myGrabbedGameObject.transform.eulerAngles.y, 0f);
-            if (angleDiff.x > 180f)
-                angleDiff.x -= 360f;
-            if (angleDiff.x < -180f)
-                angleDiff.x += 360f;
-            if (angleDiff.y > 180f)
-                angleDiff.y -= 360f;
-            if (angleDiff.y < -180f)
-                angleDiff.y += 360f;
-            if (angleDiff.z > 180f)
-                angleDiff.z -= 360f;
-            if (angleDiff.z < -180f)
-                angleDiff.z += 360f;
-
-            myGrabbedGameObject.rigidbody.velocity = positionDiff / grabEaseValue;
-            myGrabbedGameObject.rigidbody.angularVelocity = angleDiff / grabAngularEaseValue;
-
-            myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity;
-            myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.angularVelocity;
-
-            //Prevent clipping
-            if (myGrabbedGameObject.collider.bounds.min.y + positionDiff.y / grabEaseValue < floorYPosition)
+            else
             {
-                myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - myGrabbedGameObject.collider.bounds.min.y, myGrabbedGameObject.transform.position.z);
+                Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.transform.position);
+                Vector3 angleDiff = new Vector3(0f, pcam.transform.eulerAngles.y - myGrabbedGameObject.transform.eulerAngles.y, 0f);
+                if (angleDiff.x > 180f)
+                    angleDiff.x -= 360f;
+                if (angleDiff.x < -180f)
+                    angleDiff.x += 360f;
+                if (angleDiff.y > 180f)
+                    angleDiff.y -= 360f;
+                if (angleDiff.y < -180f)
+                    angleDiff.y += 360f;
+                if (angleDiff.z > 180f)
+                    angleDiff.z -= 360f;
+                if (angleDiff.z < -180f)
+                    angleDiff.z += 360f;
+
+                myGrabbedGameObject.rigidbody.velocity = positionDiff / grabEaseValue;
+                myGrabbedGameObject.rigidbody.angularVelocity = angleDiff / grabAngularEaseValue;
+
+                myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity;
+                myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.angularVelocity;
+
+                //Prevent clipping
+                if (myGrabbedGameObject.collider.bounds.min.y + positionDiff.y / grabEaseValue < floorYPosition)
+                {
+                    myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - myGrabbedGameObject.collider.bounds.min.y, myGrabbedGameObject.transform.position.z);
+                }
             }
         }
 	}
