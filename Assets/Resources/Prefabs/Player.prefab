@@ -1045,7 +1045,7 @@ Rigidbody:
   m_GameObject: {fileID: 125852}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: .200000003
+  m_Drag: 3
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1093,9 +1093,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pcam: {fileID: 2025818}
-  forward_move_speed: 15
-  backward_move_speed: 15
-  strafe_move_speed: 15
+  forward_move_speed: 40
+  backward_move_speed: 40
+  strafe_move_speed: 40
   right_left_look_speed: 5
   up_down_look_speed: 5
   look_bounds: 60
@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 500
-  grabBreakTolerance: 2.5
+  grabBreakTolerance: 1.29999995
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
   floorYPosition: -2
@@ -1158,7 +1158,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
-  m_Height: 2
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000

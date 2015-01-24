@@ -1,13 +1,20 @@
 fileFormatVersion: 2
-guid: bbb796803b99e024f99ec61db2744226
+guid: f9ed8310db800c54fa62b8b425166434
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: fish
+    100000: canister
+    100002: cap
+    100004: //RootNode
+    400000: canister
+    400002: cap
+    400004: //RootNode
+    2300000: canister
+    2300002: cap
+    3300000: canister
+    3300002: cap
+    4300000: canister
+    4300002: cap
     9500000: //RootNode
   materials:
     importMaterials: 0
