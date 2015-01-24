@@ -18,7 +18,6 @@ public class PlayerMotion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 	}
 
 	public void GroundEnter() {

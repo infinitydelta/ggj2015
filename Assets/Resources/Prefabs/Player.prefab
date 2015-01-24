@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 425818}
   - 33: {fileID: 3325818}
   - 23: {fileID: 2325818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: foot_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 425820}
   - 33: {fileID: 3325820}
   - 23: {fileID: 2325820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lowerleg_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 425840}
   - 33: {fileID: 3325822}
   - 23: {fileID: 2325822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leg_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 425822}
   - 33: {fileID: 3325824}
   - 23: {fileID: 2325824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: foot_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - 4: {fileID: 425824}
   - 33: {fileID: 3325826}
   - 23: {fileID: 2325826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lowerleg_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 425842}
   - 33: {fileID: 3325828}
   - 23: {fileID: 2325828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leg_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - 4: {fileID: 425834}
   - 33: {fileID: 3325830}
   - 23: {fileID: 2325830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - 4: {fileID: 425826}
   - 33: {fileID: 3325832}
   - 23: {fileID: 2325832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: right_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - 4: {fileID: 425828}
   - 33: {fileID: 3325834}
   - 23: {fileID: 2325834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: forearm_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - 4: {fileID: 425836}
   - 33: {fileID: 3325836}
   - 23: {fileID: 2325836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - 4: {fileID: 425830}
   - 33: {fileID: 3325838}
   - 23: {fileID: 2325838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: left_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - 4: {fileID: 425832}
   - 33: {fileID: 3325840}
   - 23: {fileID: 2325840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: forearm_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - 4: {fileID: 425838}
   - 33: {fileID: 3325842}
   - 23: {fileID: 2325842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - 4: {fileID: 425844}
   - 33: {fileID: 3325844}
   - 23: {fileID: 2325844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - 4: {fileID: 425846}
   - 33: {fileID: 3325846}
   - 23: {fileID: 2325846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body_lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425848}
   - 95: {fileID: 9525818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box_char_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,13 +273,13 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &125850
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 425850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrabPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,8 @@ GameObject:
   - 136: {fileID: 13625818}
   - 114: {fileID: 11425818}
   - 54: {fileID: 5425818}
-  m_Layer: 0
+  - 114: {fileID: 11435776}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +317,7 @@ GameObject:
   - 92: {fileID: 9225818}
   - 124: {fileID: 12425818}
   - 81: {fileID: 8125818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerCam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -333,7 +334,7 @@ GameObject:
   - 4: {fileID: 425856}
   - 135: {fileID: 13525818}
   - 114: {fileID: 11425820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JumpCol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +547,7 @@ Transform:
   m_Children:
   - {fileID: 425846}
   m_Father: {fileID: 425852}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &425850
 Transform:
   m_ObjectHideFlags: 1
@@ -554,11 +555,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 425852}
-  m_RootOrder: 2
+  m_Father: {fileID: 425854}
+  m_RootOrder: 0
 --- !u!4 &425852
 Transform:
   m_ObjectHideFlags: 1
@@ -571,7 +572,6 @@ Transform:
   m_Children:
   - {fileID: 425856}
   - {fileID: 425854}
-  - {fileID: 425850}
   - {fileID: 425848}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -584,7 +584,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 425850}
   m_Father: {fileID: 425852}
   m_RootOrder: 1
 --- !u!4 &425856
@@ -1112,6 +1113,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_motion: {fileID: 11425818}
+--- !u!114 &11435776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac294e0cdc522942b6577dcee5d52de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwForce: 500
+  grabEaseValue: 1.5
 --- !u!124 &12425818
 Behaviour:
   m_ObjectHideFlags: 1
