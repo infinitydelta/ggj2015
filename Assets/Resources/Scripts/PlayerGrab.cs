@@ -14,6 +14,8 @@ public class PlayerGrab : MonoBehaviour {
     bool itemIsGrabbed = false;
     GameObject myGrabbedGameObject;
     Camera pcam;
+    Collider myGrabbedCollider;
+    SpringJoint grabbedSpring;
 
 	// Use this for initialization
 	void Start () {
@@ -43,8 +45,9 @@ public class PlayerGrab : MonoBehaviour {
                     RaycastHit hit;
                     if (Physics.Linecast(transform.position, grabTransform.position, out hit, layerfilter))
                     {
-                        if (hit.transform.GetComponent<Rigidbody>())
+                        if (hit.rigidbody != null)
                         {
+                            myGrabbedCollider = hit.collider;
                             myGrabbedGameObject = hit.transform.gameObject;
                             myGrabbedGameObject.rigidbody.velocity = Vector3.zero;
                             myGrabbedGameObject.rigidbody.angularVelocity = Vector3.zero;
@@ -74,7 +77,7 @@ public class PlayerGrab : MonoBehaviour {
             }
             else
             {
-                Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.transform.position);
+                Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.collider.bounds.center);
                 Vector3 angleDiff = new Vector3(0f, pcam.transform.eulerAngles.y - myGrabbedGameObject.transform.eulerAngles.y, 0f);
                 if (angleDiff.x > 180f)
                     angleDiff.x -= 360f;
@@ -94,11 +97,21 @@ public class PlayerGrab : MonoBehaviour {
 
                 myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity;
                 myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.angularVelocity;
-
                 //Prevent clipping
-                if (myGrabbedGameObject.collider.bounds.min.y + positionDiff.y / grabEaseValue < floorYPosition)
+
+                float minBoundY = myGrabbedGameObject.transform.position.y;
+                foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>()) {
+                    if (col.bounds.min.y < minBoundY)
+                        minBoundY = col.bounds.min.y;
+                }
+                foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>()) {
+                    if (col.bounds.min.y < minBoundY)
+                        minBoundY = col.bounds.min.y;
+                }
+                if (minBoundY + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < floorYPosition)
                 {
-                    myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - myGrabbedGameObject.collider.bounds.min.y, myGrabbedGameObject.transform.position.z);
+                    myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - minBoundY, myGrabbedGameObject.transform.position.z);
+                    myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, 0f, myGrabbedGameObject.rigidbody.velocity.z);
                 }
             }
         }
