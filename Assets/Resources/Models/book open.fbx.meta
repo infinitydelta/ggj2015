@@ -1,20 +1,23 @@
 fileFormatVersion: 2
-guid: 6ef464de8898f534988b48b8fcf0fc41
+guid: 678ee2de51e580f40bffa7032ced8a05
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: Head
-    100002: //RootNode
-    100004: Shaft
-    400000: Head
-    400002: //RootNode
-    400004: Shaft
-    2300000: Head
-    2300002: Shaft
-    3300000: Head
-    3300002: Shaft
-    4300000: Head
-    4300002: Shaft
+    100000: //RootNode
+    100002: pCube2
+    100004: pCube3
+    100006: pCube4
+    100008: transform1
+    100010: transform2
+    400000: //RootNode
+    400002: pCube2
+    400004: pCube3
+    400006: pCube4
+    400008: transform1
+    400010: transform2
+    2300000: pCube4
+    3300000: pCube4
+    4300000: pCube4
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -53,7 +56,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
