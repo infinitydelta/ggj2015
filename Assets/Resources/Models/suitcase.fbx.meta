@@ -1,70 +1,23 @@
 fileFormatVersion: 2
-guid: c96be031a86fcd3469a3bed997c81321
+guid: eb1b5ef363c9e214dbd99730dffc254d
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: a
-    100002: b
-    100004: body
-    100006: //RootNode
-    100008: joystickL
-    100010: joystickL2
-    100012: joystickR
-    100014: joystickR2
-    100016: pCube5
-    100018: polySurface7
-    100020: polySurface8
-    100022: x
-    100024: y
-    400000: a
-    400002: b
-    400004: body
-    400006: //RootNode
-    400008: joystickL
-    400010: joystickL2
-    400012: joystickR
-    400014: joystickR2
-    400016: pCube5
-    400018: polySurface7
-    400020: polySurface8
-    400022: x
-    400024: y
-    2300000: a
-    2300002: b
-    2300004: body
-    2300006: joystickL
-    2300008: joystickL2
-    2300010: joystickR
-    2300012: joystickR2
-    2300014: polySurface7
-    2300016: polySurface8
-    2300018: x
-    2300020: y
-    3300000: a
-    3300002: b
-    3300004: body
-    3300006: joystickL
-    3300008: joystickL2
-    3300010: joystickR
-    3300012: joystickR2
-    3300014: polySurface7
-    3300016: polySurface8
-    3300018: x
-    3300020: y
-    4300000: joystickL2
-    4300002: joystickL
-    4300004: joystickR2
-    4300006: joystickR
-    4300008: polySurface7
-    4300010: polySurface8
-    4300012: x
-    4300014: b
-    4300016: a
-    4300018: y
-    4300020: body
+    100000: handle
+    100002: //RootNode
+    100004: suitcase
+    400000: handle
+    400002: //RootNode
+    400004: suitcase
+    2300000: handle
+    2300002: suitcase
+    3300000: handle
+    3300002: suitcase
+    4300000: suitcase
+    4300002: handle
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -82,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .100000001
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -100,7 +53,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
