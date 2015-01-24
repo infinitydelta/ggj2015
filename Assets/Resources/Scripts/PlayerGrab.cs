@@ -3,8 +3,10 @@ using System.Collections;
 
 public class PlayerGrab : MonoBehaviour {
     public float throwForce = 300f;
+    public float grabBreakTolerance = 2.5f;
     public float grabEaseValue = 1.5f;
-    public float grabAngularEaseValue = 12f;
+    public float grabAngularEaseValue = 8f;
+    public float floorYPosition = -2f;
 
     Transform grabTransform;
     int controllerNumber;
@@ -12,7 +14,6 @@ public class PlayerGrab : MonoBehaviour {
     bool itemIsGrabbed = false;
     GameObject myGrabbedGameObject;
     Camera pcam;
-    float relativeAngle;
 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +46,8 @@ public class PlayerGrab : MonoBehaviour {
                         if (hit.transform.GetComponent<Rigidbody>())
                         {
                             myGrabbedGameObject = hit.transform.gameObject;
-                            relativeAngle = myGrabbedGameObject.transform.eulerAngles.y - pcam.transform.eulerAngles.y;
+                            myGrabbedGameObject.rigidbody.velocity = Vector3.zero;
+                            myGrabbedGameObject.rigidbody.angularVelocity = Vector3.zero;
                             itemIsGrabbed = true;
                         }
                     }
@@ -60,10 +62,26 @@ public class PlayerGrab : MonoBehaviour {
         if (itemIsGrabbed)
         {
             myGrabbedGameObject.rigidbody.useGravity = false;
-            myGrabbedGameObject.rigidbody.velocity = Vector3.zero;
-            myGrabbedGameObject.rigidbody.angularVelocity = Vector3.zero;
             Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, true);
-            myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + (grabTransform.position - myGrabbedGameObject.transform.position) / grabEaseValue;
+
+            //Break grab if object is moving violently
+            if (myGrabbedGameObject.rigidbody.velocity.magnitude > grabBreakTolerance)
+            {
+                myGrabbedGameObject.rigidbody.useGravity = true;
+                Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, false);
+                myGrabbedGameObject = null;
+                itemIsGrabbed = false;
+            }
+
+
+            //Prevent clipping
+            Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.transform.position);
+            myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + positionDiff / grabEaseValue;
+            if (myGrabbedGameObject.collider.bounds.min.y + positionDiff.y / grabEaseValue < floorYPosition)
+            {
+                myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - myGrabbedGameObject.collider.bounds.min.y, myGrabbedGameObject.transform.position.z);
+            }
+
             Vector3 angleDiff = new Vector3(0f, pcam.transform.eulerAngles.y - myGrabbedGameObject.transform.eulerAngles.y, 0f);
             if (angleDiff.x > 180f)
                 angleDiff.x -= 360f;
@@ -78,6 +96,8 @@ public class PlayerGrab : MonoBehaviour {
             if (angleDiff.z < -180f)
                 angleDiff.z += 360f;
             myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + angleDiff / grabAngularEaseValue;
+            myGrabbedGameObject.rigidbody.velocity = Vector3.zero;
+            myGrabbedGameObject.rigidbody.angularVelocity = Vector3.zero;
         }
 	}
 }

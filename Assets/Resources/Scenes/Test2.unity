@@ -204,8 +204,8 @@ Transform:
   m_PrefabInternal: {fileID: 2103311509}
   m_GameObject: {fileID: 91620853}
   m_LocalRotation: {x: -4.3297803e-17, y: .707106769, z: .707106888, w: -4.32978096e-17}
-  m_LocalPosition: {x: -5.73000002, y: .910000026, z: -2.4000001}
-  m_LocalScale: {x: .475723505, y: .475723684, z: .475723684}
+  m_LocalPosition: {x: -5.73000002, y: 1.25, z: -2.4000001}
+  m_LocalScale: {x: 1.2815448, y: 1.28154516, z: 1.28154516}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1062,6 +1062,10 @@ Prefab:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 11435776, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
+      propertyPath: grabAngularEaseValue
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8b805a249a8a9b49b1c56b91e826708, type: 2}
   m_RootGameObject: {fileID: 858805830}
@@ -1310,7 +1314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwForce: 500
   grabEaseValue: 1.5
-  grabAngularEaseValue: 1.5
+  grabAngularEaseValue: 8
+  floorYPosition: -2
+  grabBreakTolerance: 2.5
 --- !u!54 &858805832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3182,7 +3188,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aab57dd13c22ad54ba9a68faadb3c76f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: .910000026
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aab57dd13c22ad54ba9a68faadb3c76f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3210,15 +3216,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aab57dd13c22ad54ba9a68faadb3c76f, type: 3}
       propertyPath: m_LocalScale.x
-      value: .475723505
+      value: 1.2815448
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aab57dd13c22ad54ba9a68faadb3c76f, type: 3}
       propertyPath: m_LocalScale.y
-      value: .475723684
+      value: 1.28154516
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aab57dd13c22ad54ba9a68faadb3c76f, type: 3}
       propertyPath: m_LocalScale.z
-      value: .475723684
+      value: 1.28154516
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aab57dd13c22ad54ba9a68faadb3c76f, type: 3}
@@ -3388,3 +3394,5 @@ MonoBehaviour:
   throwForce: 500
   grabEaseValue: 1.5
   grabAngularEaseValue: 12
+  floorYPosition: -2
+  grabBreakTolerance: 2.5
