@@ -48,51 +48,26 @@ public class PlayerMotion : MonoBehaviour {
 		udRot = Mathf.Clamp(udRot,-look_bounds,look_bounds);
         transform.rotation = Quaternion.Euler(0, rlRot, 0);
         pcam.transform.rotation = Quaternion.Euler(udRot, rlRot, 0);
-
-
-		//fov
-		pcam.fieldOfView = 90 + rigidbody.velocity.magnitude;
 	}
 
 	void FixedUpdate(){
-		
 		//movement
 		if (Input.GetKey(KeyCode.Escape)){ //temp for testing
 			Screen.lockCursor = false;
 		}else{
 			Screen.lockCursor = true;
 		}
-		
-		if(Input.GetAxis("p" + controllerNumber + "_MoveY") > 0){
-			Vector3 mvec = pcam.transform.forward;
-			mvec.y = 0;
-			mvec.Normalize();
-			rigidbody.AddForce(mvec * forward_move_speed);
-		}
 
-        if (Input.GetAxis("p" + controllerNumber + "_MoveX") < 0)
+        if (Input.GetAxis("p" + controllerNumber + "_MoveY") > 0)
         {
-			Vector3 mvec = -pcam.transform.right;
-			mvec.y = 0;
-			mvec.Normalize();
-			rigidbody.AddForce(mvec * strafe_move_speed);
-		}
+            rigidbody.AddForce(Input.GetAxis("p" + controllerNumber + "_MoveY") * pcam.transform.forward * forward_move_speed);
+        }
+        else if (Input.GetAxis("p" + controllerNumber + "_MoveY") < 0)
+        {
+            rigidbody.AddForce(Input.GetAxis("p" + controllerNumber + "_MoveY") * pcam.transform.forward * backward_move_speed);
+        }
+        rigidbody.AddForce( Input.GetAxis("p" + controllerNumber + "_MoveX") * pcam.transform.right * strafe_move_speed);
 
-        if (Input.GetAxis("p" + controllerNumber + "_MoveY") < 0)
-        {
-			Vector3 mvec = -pcam.transform.forward;
-			mvec.y = 0;
-			mvec.Normalize();
-			rigidbody.AddForce(mvec * backward_move_speed);
-		}
-
-        if (Input.GetAxis("p" + controllerNumber + "_MoveX") > 0)
-        {
-			Vector3 mvec = pcam.transform.right;
-			mvec.y = 0;
-			mvec.Normalize();
-			rigidbody.AddForce(mvec * strafe_move_speed);
-		}
 		
 		//jumping
         if (Input.GetAxis("p" + controllerNumber + "_Jump") != 1.0f)
