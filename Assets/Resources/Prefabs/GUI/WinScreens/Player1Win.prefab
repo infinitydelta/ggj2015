@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &189486
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22489486}
+  - 222: {fileID: 22289486}
+  - 114: {fileID: 11489486}
+  - 114: {fileID: 11489484}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &193040
 GameObject:
   m_ObjectHideFlags: 1
@@ -77,12 +95,55 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.33999991, y: -.349999964, z: -2.15000033}
+  m_LocalPosition: {x: 6863.75977, y: 3973.99707, z: -19180.1621}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22493044}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11489484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13b6f6e045f7134c8078ce429797571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTitles:
+  - You Killed Your Best Friend
+  invisibleTime: 0
+  fadeInTime: 2
+  stayTime: 8
+  fadeOutTime: 8
+--- !u!114 &11489486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 0c2c7ba61139f78438b4977993942f7e, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: You were born to do this
 --- !u!114 &11493040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,8 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5937bd83c0e86ce40b91eb55a98edce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 10
-  reload: 1
+  lifeTime: 12
+  reload: 0
 --- !u!114 &11493042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1e2d5bff6da9f4bb847c1bcc22bfe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invisibleTime: 6
+  invisibleTime: 8
   fadeInTime: 8
   stayTime: 12
   fadeOutTime: 12
@@ -123,11 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTitles:
-  - Player 1 Wins
-  invisibleTime: 2
-  fadeInTime: 4
-  stayTime: 8
-  fadeOutTime: 10
+  - Player 2 Wins
+  invisibleTime: 8
+  fadeInTime: 8
+  stayTime: 12
+  fadeOutTime: 12
 --- !u!114 &11493046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,7 +214,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: You were born to do this
 --- !u!114 &11493048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,6 +273,12 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!222 &22289486
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189486}
 --- !u!222 &22293040
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -241,6 +308,23 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!224 &22489486
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22493044}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 750, y: 800}
+  m_Pivot: {x: .5, y: .5}
 --- !u!224 &22493040
 RectTransform:
   m_ObjectHideFlags: 1
@@ -252,10 +336,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22493044}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -3.05175781e-05}
   m_SizeDelta: {x: 750, y: 800}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22493042
@@ -286,6 +370,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 22493042}
+  - {fileID: 22489486}
   - {fileID: 22493040}
   m_Father: {fileID: 493040}
   m_RootOrder: 0

@@ -16,6 +16,7 @@ public class Door : MonoBehaviour
 	    if (health < 0)
 	    {
 	        GameObject.Find("WinHandler").GetComponent<WinConditions>().doorWin();
+	        Instantiate(Resources.Load<GameObject>("Prefabs/GUI/WinScreens/EscapeWin"));
             breakApart();
 	    }
 	}
