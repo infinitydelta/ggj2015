@@ -36,10 +36,6 @@ public class PlayerMotion : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-        Debug.Log(onOtherPlayer);
-
-
 		//camera rotation
 		float drlRot = 0; //right/left rotation
         drlRot = Input.GetAxis("p" + controllerNumber + "_LookX"); 

@@ -29,6 +29,11 @@ public class WinConditions : MonoBehaviour
         
     }
 
+    public void baby()
+    {
+        Instantiate(Resources.Load("Prefabs/GUI/WinScreens/BabyWin"), transform.position, Quaternion.identity);
+    }
+
     IEnumerator killFadeIn(String text)
     {
         yield return new WaitForEndOfFrame();

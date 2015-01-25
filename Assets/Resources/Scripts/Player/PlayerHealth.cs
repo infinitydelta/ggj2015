@@ -5,13 +5,11 @@ public class PlayerHealth : MonoBehaviour {
 
     public float damageVelCutoff = 10;
     public float health = 30f;
-    private WinConditions win;
     private int playerID;
 
 	// Use this for initialization
 	void Start ()
 	{
-	    win = GameObject.Find("WinHandler").GetComponent<WinConditions>();
 	    playerID = GetComponent<PlayerMotion>().controllerNumber;
 	}
 	
@@ -26,11 +24,11 @@ public class PlayerHealth : MonoBehaviour {
 
             if (playerID == 1)
             {
-                win.playerTwoWinsKill();
+                GameObject.Find("WinHandler").GetComponent<WinConditions>().playerTwoWinsKill();
             }
             else
             {
-                win.playerOneWinsKill();
+                GameObject.Find("WinHandler").GetComponent<WinConditions>().playerOneWinsKill();
             }
         }
 	}
