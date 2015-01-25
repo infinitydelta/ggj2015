@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
+
+    public float damageVelCutoff = 10;
     public float health = 100f;
 
 	// Use this for initialization
@@ -21,8 +23,9 @@ public class PlayerHealth : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag != "Player" && col.gameObject.tag != "Environment")
+        if (col.gameObject.tag != "Player" && col.gameObject.tag != "Environment"&&col.rigidbody !=null&&col.relativeVelocity.magnitude>damageVelCutoff)
         {
+            
             health -= col.relativeVelocity.magnitude * col.rigidbody.mass;
         }
     }

@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 64: {fileID: 6400000}
   - 23: {fileID: 2300000}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400002}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 135: {fileID: 13500000}
   - 114: {fileID: 11400002}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: JumpCol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - 92: {fileID: 9200000}
   - 124: {fileID: 12400000}
   - 81: {fileID: 8100000}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: PlayerCam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 54: {fileID: 5400000}
   - 54: {fileID: 5449080}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: GrabPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11449080}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Player2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.34299994, y: 0, z: 0}
+  m_LocalPosition: {x: 2.34299994, y: 1.47094893, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -208,7 +208,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294966271
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -327,8 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameDuration: .5
-  name: bread
-  playerID: 2
+  name: toaster
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,6 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26778c136816edb4384f64c60bc91e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageVelCutoff: 10
   health: 50
 --- !u!124 &12400000
 Behaviour:
