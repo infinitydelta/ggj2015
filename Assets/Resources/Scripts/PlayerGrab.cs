@@ -64,56 +64,64 @@ public class PlayerGrab : MonoBehaviour {
         }
         if (itemIsGrabbed)
         {
-            myGrabbedGameObject.rigidbody.useGravity = false;
-            Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, true);
+			if(myGrabbedGameObject.rigidbody == null)
+			{
+				myGrabbedGameObject = null;
+				itemIsGrabbed = false;
+			}
+			else
+			{
+	            myGrabbedGameObject.rigidbody.useGravity = false;
+	            Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, true);
 
-            //Break grab if object is moving violently
-            if (myGrabbedGameObject.rigidbody.velocity.magnitude > grabBreakTolerance)
-            {
-                myGrabbedGameObject.rigidbody.useGravity = true;
-                Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, false);
-                myGrabbedGameObject = null;
-                itemIsGrabbed = false;
-            }
-            else
-            {
-                Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.collider.bounds.center);
-                Vector3 angleDiff = new Vector3(0f, pcam.transform.eulerAngles.y - myGrabbedGameObject.transform.eulerAngles.y, 0f);
-                if (angleDiff.x > 180f)
-                    angleDiff.x -= 360f;
-                if (angleDiff.x < -180f)
-                    angleDiff.x += 360f;
-                if (angleDiff.y > 180f)
-                    angleDiff.y -= 360f;
-                if (angleDiff.y < -180f)
-                    angleDiff.y += 360f;
-                if (angleDiff.z > 180f)
-                    angleDiff.z -= 360f;
-                if (angleDiff.z < -180f)
-                    angleDiff.z += 360f;
+	            //Break grab if object is moving violently
+	            if (myGrabbedGameObject.rigidbody.velocity.magnitude > grabBreakTolerance)
+	            {
+	                myGrabbedGameObject.rigidbody.useGravity = true;
+	                Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, false);
+	                myGrabbedGameObject = null;
+	                itemIsGrabbed = false;
+	            }
+	            else
+	            {
+	                Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.collider.bounds.center);
+	                Vector3 angleDiff = new Vector3(0f, pcam.transform.eulerAngles.y - myGrabbedGameObject.transform.eulerAngles.y, 0f);
+	                if (angleDiff.x > 180f)
+	                    angleDiff.x -= 360f;
+	                if (angleDiff.x < -180f)
+	                    angleDiff.x += 360f;
+	                if (angleDiff.y > 180f)
+	                    angleDiff.y -= 360f;
+	                if (angleDiff.y < -180f)
+	                    angleDiff.y += 360f;
+	                if (angleDiff.z > 180f)
+	                    angleDiff.z -= 360f;
+	                if (angleDiff.z < -180f)
+	                    angleDiff.z += 360f;
 
-                myGrabbedGameObject.rigidbody.velocity = positionDiff / grabEaseValue;
-                myGrabbedGameObject.rigidbody.angularVelocity = angleDiff / grabAngularEaseValue;
+	                myGrabbedGameObject.rigidbody.velocity = positionDiff / grabEaseValue;
+	                myGrabbedGameObject.rigidbody.angularVelocity = angleDiff / grabAngularEaseValue;
 
-                myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity;
-                myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.angularVelocity;
-                //Prevent clipping
+	                myGrabbedGameObject.transform.position = myGrabbedGameObject.transform.position + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity;
+	                myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.angularVelocity;
+	                //Prevent clipping
 
-                float minBoundY = myGrabbedGameObject.transform.position.y;
-                foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>()) {
-                    if (col.bounds.min.y < minBoundY)
-                        minBoundY = col.bounds.min.y;
-                }
-                foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>()) {
-                    if (col.bounds.min.y < minBoundY)
-                        minBoundY = col.bounds.min.y;
-                }
-                if (minBoundY + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < floorYPosition)
-                {
-                    myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - minBoundY, myGrabbedGameObject.transform.position.z);
-                    myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, 0f, myGrabbedGameObject.rigidbody.velocity.z);
-                }
-            }
+	                float minBoundY = myGrabbedGameObject.transform.position.y;
+	                foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>()) {
+	                    if (col.bounds.min.y < minBoundY)
+	                        minBoundY = col.bounds.min.y;
+	                }
+	                foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>()) {
+	                    if (col.bounds.min.y < minBoundY)
+	                        minBoundY = col.bounds.min.y;
+	                }
+	                if (minBoundY + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < floorYPosition)
+	                {
+	                    myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - minBoundY, myGrabbedGameObject.transform.position.z);
+	                    myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, 0f, myGrabbedGameObject.rigidbody.velocity.z);
+	                }
+	            }
+			}
         }
 	}
 }
