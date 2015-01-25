@@ -4,6 +4,8 @@
 TagManager:
   tags:
   - Environment
+  - Key_chest
+  - Key_door
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
