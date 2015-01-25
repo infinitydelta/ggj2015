@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6863.75977, y: 3973.99707, z: -19180.1621}
+  m_LocalPosition: {x: 9.60113049, y: .959273815, z: -5.84480476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22493044}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 12
-  reload: 0
+  reload: 1
 --- !u!114 &11493042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invisibleTime: 8
-  fadeInTime: 8
+  fadeInTime: 10
   stayTime: 12
   fadeOutTime: 12
 --- !u!114 &11493044
@@ -186,7 +186,7 @@ MonoBehaviour:
   myTitles:
   - Player 2 Wins
   invisibleTime: 8
-  fadeInTime: 8
+  fadeInTime: 10
   stayTime: 12
   fadeOutTime: 12
 --- !u!114 &11493046

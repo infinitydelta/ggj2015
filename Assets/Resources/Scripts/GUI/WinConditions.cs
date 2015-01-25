@@ -7,10 +7,12 @@ public class WinConditions : MonoBehaviour
 {
 
     public float numLightbulbs;
+    private GameObject directLight;
 	// Use this for initialization
 	void Start ()
 	{
 	    numLightbulbs = GameObject.FindGameObjectsWithTag("Bulb").Count();
+	    directLight = GameObject.Find("Directional light");
 	}
 	
 	// Update is called once per frame
@@ -46,6 +48,8 @@ public class WinConditions : MonoBehaviour
 	public void lightsOut()
 	{
 		Instantiate(Resources.Load("Prefabs/GUI/WinScreens/LightsOut"), transform.position, Quaternion.identity);
+        directLight.SetActive(false);
+
 	}
 
     IEnumerator killFadeIn(String text)

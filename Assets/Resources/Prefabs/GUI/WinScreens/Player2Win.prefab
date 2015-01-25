@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invisibleTime: 8
-  fadeInTime: 8
+  fadeInTime: 10
   stayTime: 12
   fadeOutTime: 12
 --- !u!114 &11495194
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 11
-  reload: 0
+  reload: 1
 --- !u!222 &22295186
 CanvasRenderer:
   m_ObjectHideFlags: 1
