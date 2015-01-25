@@ -915,8 +915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26778c136816edb4384f64c60bc91e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageVelCutoff: 4
-  health: 50
+  damageVelCutoff: .200000003
+  health: 35
 --- !u!114 &543612804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,7 +1320,7 @@ Transform:
   - {fileID: 193264133}
   - {fileID: 1362710630}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!54 &595931282
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2074,7 +2074,7 @@ Transform:
   - {fileID: 594853325}
   - {fileID: 1351776761}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &886769769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2108,8 +2108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26778c136816edb4384f64c60bc91e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageVelCutoff: 4
-  health: 50
+  damageVelCutoff: .200000003
+  health: 35
 --- !u!114 &886769771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2203,7 +2203,7 @@ Transform:
   - {fileID: 1637893582}
   - {fileID: 1708618830}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!136 &933720757
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3682,7 +3682,7 @@ Transform:
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1637893581
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,63 +4279,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1362710630}
   m_RootOrder: 0
---- !u!1 &1916707466
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1916707469}
-  - 114: {fileID: 1916707468}
-  - 114: {fileID: 1916707467}
-  m_Layer: 0
-  m_Name: WwiseGlobal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1916707467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1916707466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 249e9324ca281b34bb81abffbcc7bf6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basePath: Audio\GeneratedSoundBanks
-  language: English(US)
-  defaultPoolSize: 4096
-  lowerPoolSize: 2048
-  streamingPoolSize: 1024
-  memoryCutoffThreshold: .949999988
---- !u!114 &1916707468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1916707466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b487d85528a56f4db3488288f005718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1916707469
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1916707466}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
 --- !u!1001 &1939563663
 Prefab:
   m_ObjectHideFlags: 0
@@ -4644,7 +4587,7 @@ Transform:
   - {fileID: 1489171077}
   - {fileID: 1138964710}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &2031572609
 GameObject:
   m_ObjectHideFlags: 0
