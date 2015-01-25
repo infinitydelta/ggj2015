@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdc0be7dc84404fa9fe4ca964859ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageVelCutoff: 6
+  damageVelCutoff: 3
   health: 35
 --- !u!124 &12425818
 Behaviour:
