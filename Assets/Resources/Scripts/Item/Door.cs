@@ -1,14 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Xml.Schema;
 
 public class Door : MonoBehaviour
 {
+    public AudioClip AudioClipBitBroken;
+    public AudioClip AudioClipVeryBroken;
+    public AudioClip AudioClipCompletelyBroken;
     bool opened = false;
     public float health = 300;
-    
+    private float maxHealth;
+    private Transform bitBroken;
+    private Transform veryBroken;
+    private Transform completelyBroken;
+    private Transform knob;
+    private GameObject curEnabled;
+
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+	    knob = transform.FindChild("Cylinder");
+	    maxHealth = health;
+	    bitBroken = transform.FindChild("DoorBroke1");
+	    veryBroken = transform.FindChild("DoorBroke2");
+	    completelyBroken = transform.FindChild("DoorGibs");
+        curEnabled = transform.FindChild("Cube.001").gameObject;
 	}
 	
 	// Update is called once per frame
@@ -17,8 +33,18 @@ public class Door : MonoBehaviour
 	    {
 	        GameObject.Find("WinHandler").GetComponent<WinConditions>().doorWin();
 	        Instantiate(Resources.Load<GameObject>("Prefabs/GUI/WinScreens/EscapeWin"));
-            breakApart();
+	        breakApart();
 	    }
+	    else if(health < maxHealth/3)
+	    {
+	        veryBroken.gameObject.SetActive(true);
+            bitBroken.gameObject.SetActive(false);
+	    }
+        else if (health < (2*maxHealth/3))
+        {
+            bitBroken.gameObject.SetActive(true);
+            curEnabled.SetActive(false);
+        }
 	}
 
 
@@ -34,7 +60,10 @@ public class Door : MonoBehaviour
     void breakApart()
     {
         //unfinished, add broken up mesh then break apart in script when thats in
-        Destroy(gameObject);
+        completelyBroken.gameObject.SetActive(true);
+        veryBroken.gameObject.SetActive(false);
+        Destroy(knob.gameObject);
+        Destroy(this);
     }
 
     void OnTriggerEnter(Collider other)

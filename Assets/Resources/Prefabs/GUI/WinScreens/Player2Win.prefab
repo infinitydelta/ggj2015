@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6831.11035, y: 3972.80103, z: -19149.6348}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22495190}
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invisibleTime: 8
-  fadeInTime: 8
+  fadeInTime: 10
   stayTime: 12
   fadeOutTime: 12
 --- !u!114 &11495194
@@ -258,8 +258,8 @@ MonoBehaviour:
   - You Killed Your Best Friend
   invisibleTime: 0
   fadeInTime: 2
-  stayTime: 8
-  fadeOutTime: 8
+  stayTime: 5
+  fadeOutTime: 7
 --- !u!114 &11495202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 11
-  reload: 0
+  reload: 1
 --- !u!222 &22295186
 CanvasRenderer:
   m_ObjectHideFlags: 1

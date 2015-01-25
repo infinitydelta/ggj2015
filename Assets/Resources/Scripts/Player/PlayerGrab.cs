@@ -15,8 +15,8 @@ public class PlayerGrab : MonoBehaviour {
 
     Transform grabTransform;
     int controllerNumber;
-    bool grabButtonDown = false;
-    bool itemIsGrabbed = false;
+    [HideInInspector] public bool grabButtonDown = false;
+    [HideInInspector] public bool itemIsGrabbed = false;
     GameObject myGrabbedGameObject;
     Camera pcam;
     Collider myGrabbedCollider;
