@@ -129,13 +129,13 @@ public class AnimateTexture : MonoBehaviour
 	        }
 	    }
 
-	    if (idle && rigidbody.velocity.magnitude < 0.01f)
+	    if (idle && rigidbody.velocity.magnitude < 0.05f)
 	    {
 	        mat.SetTexture(0, frames[curFrame]);
 	        idle = false;
 
 	    }
-        else if (!idle && rigidbody.velocity.magnitude > 0.01f)
+        else if (!idle && rigidbody.velocity.magnitude > 0.05f)
 	    {
 	        mat.SetTexture(0, idleFrames[curFrame]);
 	        idle = true;
