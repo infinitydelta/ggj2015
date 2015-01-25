@@ -348,7 +348,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameDuration: .5
-  name: toaster
+  name: 746f6173746572
+  frames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  idleFrames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  mat: {fileID: 0}
+  curFrameStart: 0
+  curFrame: 0
+  otherPlayer: {fileID: 0}
+  otherCamera: {fileID: 0}
+  lookTarget: {x: 0, y: 0, z: 0, w: 0}
+  origScale: {x: 0, y: 0, z: 0}
+  child: {fileID: 0}
+  idle: 0
+  angleBetween: 0
+  dotAngle: 0
+  rightAngle: 0
 --- !u!114 &145693772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +392,17 @@ MonoBehaviour:
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
   floorYPosition: -2
+  ceilingYPosition: 8
+  wallMinXPosition: -4
+  wallMaxXPosition: 4
+  grabTransform: {fileID: 0}
+  controllerNumber: 0
+  grabButtonDown: 0
+  itemIsGrabbed: 0
+  myGrabbedGameObject: {fileID: 0}
+  pcam: {fileID: 0}
+  myGrabbedCollider: {fileID: 0}
+  grabbedSpring: {fileID: 0}
 --- !u!54 &145693773
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1033,6 +1070,17 @@ MonoBehaviour:
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
   floorYPosition: -2
+  ceilingYPosition: 8
+  wallMinXPosition: -4
+  wallMaxXPosition: 4
+  grabTransform: {fileID: 0}
+  controllerNumber: 0
+  grabButtonDown: 0
+  itemIsGrabbed: 0
+  myGrabbedGameObject: {fileID: 0}
+  pcam: {fileID: 0}
+  myGrabbedCollider: {fileID: 0}
+  grabbedSpring: {fileID: 0}
 --- !u!54 &858805832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1112,7 +1160,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameDuration: .5
-  name: bread
+  name: 6272656164
+  frames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  idleFrames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  mat: {fileID: 0}
+  curFrameStart: 0
+  curFrame: 0
+  otherPlayer: {fileID: 0}
+  otherCamera: {fileID: 0}
+  lookTarget: {x: 0, y: 0, z: 0, w: 0}
+  origScale: {x: 0, y: 0, z: 0}
+  child: {fileID: 0}
+  idle: 0
+  angleBetween: 0
+  dotAngle: 0
+  rightAngle: 0
 --- !u!136 &858805837
 CapsuleCollider:
   m_ObjectHideFlags: 0

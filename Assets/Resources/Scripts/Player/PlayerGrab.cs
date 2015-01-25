@@ -7,9 +7,11 @@ public class PlayerGrab : MonoBehaviour {
     public float grabEaseValue = 1.5f;
     public float grabAngularEaseValue = 8f;
     public float floorYPosition = 0f;
-    public float ceilingYPosition = 8f;
-    public float wallMinXPosition = -4f;
-    public float wallMaxXPosition = 4f;
+    public float ceilingYPosition = 10f;
+    public float wallMinXPosition = -5f;
+    public float wallMaxXPosition = 5f;
+    public float wallMinZPosition = -5f;
+    public float wallMaxZPosition = 5f;
 
     Transform grabTransform;
     int controllerNumber;
@@ -134,25 +136,35 @@ public class PlayerGrab : MonoBehaviour {
                     float maxBoundX = float.MinValue;
                     float minBoundY = float.MaxValue;
                     float maxBoundY = float.MinValue;
+                    float minBoundZ = float.MaxValue;
+                    float maxBoundZ = float.MinValue;
 	                foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>()) {
-                        if (col.bounds.min.y < minBoundY)
-                            minBoundY = col.bounds.min.y;
-                        if (col.bounds.max.y > maxBoundY)
-                            maxBoundY = col.bounds.max.y;
                         if (col.bounds.min.x < minBoundX)
                             minBoundX = col.bounds.min.x;
                         if (col.bounds.max.x > maxBoundX)
                             maxBoundX = col.bounds.max.x;
+                        if (col.bounds.min.y < minBoundY)
+                            minBoundY = col.bounds.min.y;
+                        if (col.bounds.max.y > maxBoundY)
+                            maxBoundY = col.bounds.max.y;
+                        if (col.bounds.min.z < minBoundZ)
+                            minBoundZ = col.bounds.min.z;
+                        if (col.bounds.max.z > maxBoundZ)
+                            maxBoundZ = col.bounds.max.z;
 	                }
 	                foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>()) {
-                        if (col.bounds.min.y < minBoundY)
-                            minBoundY = col.bounds.min.y;
-                        if (col.bounds.max.y > maxBoundY)
-                            maxBoundY = col.bounds.max.y;
                         if (col.bounds.min.x < minBoundX)
                             minBoundX = col.bounds.min.x;
                         if (col.bounds.max.x > maxBoundX)
                             maxBoundX = col.bounds.max.x;
+                        if (col.bounds.min.y < minBoundY)
+                            minBoundY = col.bounds.min.y;
+                        if (col.bounds.max.y > maxBoundY)
+                            maxBoundY = col.bounds.max.y;
+                        if (col.bounds.min.z < minBoundZ)
+                            minBoundZ = col.bounds.min.z;
+                        if (col.bounds.max.z > maxBoundZ)
+                            maxBoundZ = col.bounds.max.z;
 	                }
                     if (minBoundY + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < floorYPosition)
                     {
@@ -166,13 +178,23 @@ public class PlayerGrab : MonoBehaviour {
                     }
                     if (minBoundX + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.x < wallMinXPosition)
                     {
-                        myGrabbedGameObject.transform.position = new Vector3(wallMinXPosition + myGrabbedGameObject.transform.position.y - minBoundX, myGrabbedGameObject.transform.position.y, myGrabbedGameObject.transform.position.z);
+                        myGrabbedGameObject.transform.position = new Vector3(wallMinXPosition + myGrabbedGameObject.transform.position.x - minBoundX, myGrabbedGameObject.transform.position.y, myGrabbedGameObject.transform.position.z);
                         myGrabbedGameObject.rigidbody.velocity = new Vector3(0f, myGrabbedGameObject.rigidbody.velocity.y, myGrabbedGameObject.rigidbody.velocity.z);
                     }
                     if (maxBoundX + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.x > wallMaxXPosition)
                     {
-                        myGrabbedGameObject.transform.position = new Vector3(wallMaxXPosition + myGrabbedGameObject.transform.position.y - maxBoundX, myGrabbedGameObject.transform.position.y, myGrabbedGameObject.transform.position.z);
+                        myGrabbedGameObject.transform.position = new Vector3(wallMaxXPosition + myGrabbedGameObject.transform.position.x - maxBoundX, myGrabbedGameObject.transform.position.y, myGrabbedGameObject.transform.position.z);
                         myGrabbedGameObject.rigidbody.velocity = new Vector3(0f, myGrabbedGameObject.rigidbody.velocity.y, myGrabbedGameObject.rigidbody.velocity.z);
+                    }
+                    if (minBoundZ + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.z < wallMinZPosition)
+                    {
+                        myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, myGrabbedGameObject.transform.position.y, wallMinZPosition + myGrabbedGameObject.transform.position.z - minBoundZ);
+                        myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, myGrabbedGameObject.rigidbody.velocity.y, 0f);
+                    }
+                    if (maxBoundZ + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.z > wallMaxZPosition)
+                    {
+                        myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, myGrabbedGameObject.transform.position.y, wallMaxZPosition + myGrabbedGameObject.transform.position.z - maxBoundZ);
+                        myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, myGrabbedGameObject.rigidbody.velocity.y, 0f);
                     }
 	            }
 			}
