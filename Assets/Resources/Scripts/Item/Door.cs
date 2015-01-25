@@ -10,16 +10,31 @@ public class Door : MonoBehaviour
     private Transform bitBroken;
     private Transform veryBroken;
     private Transform completelyBroken;
+    private Transform knob;
     private GameObject curEnabled;
+    private AudioClip curClip;
+    private AudioSource source;
+
+    public AudioClip AudioClipBitBroken;
+    public AudioClip AudioClipVeryBroken;
+    public AudioClip AudioClipCompletelyBroken;
+    private AudioSource myAudioSource;
 
 	// Use this for initialization
 	void Start ()
 	{
+	    curClip = AudioClipBitBroken;
+	    knob = transform.FindChild("Cylinder");
 	    maxHealth = health;
 	    bitBroken = transform.FindChild("DoorBroke1");
 	    veryBroken = transform.FindChild("DoorBroke2");
 	    completelyBroken = transform.FindChild("DoorGibs");
         curEnabled = transform.FindChild("Cube.001").gameObject;
+<<<<<<< HEAD
+	    source = GetComponent<AudioSource>();
+=======
+        myAudioSource = GetComponent<AudioSource>();
+>>>>>>> origin/master
 	}
 	
 	// Update is called once per frame
@@ -34,11 +49,13 @@ public class Door : MonoBehaviour
 	    {
 	        veryBroken.gameObject.SetActive(true);
             bitBroken.gameObject.SetActive(false);
+	        curClip = AudioClipCompletelyBroken;
 	    }
         else if (health < (2*maxHealth/3))
         {
             bitBroken.gameObject.SetActive(true);
             curEnabled.SetActive(false);
+            curClip = AudioClipVeryBroken;
         }
 	}
 
@@ -47,7 +64,18 @@ public class Door : MonoBehaviour
     {
         if (col.gameObject.GetComponent<ObjectScript>()!=null)
         {
+            source.clip = curClip; 
+            source.Play();
             health -= col.relativeVelocity.magnitude*col.gameObject.rigidbody.mass;
+            
+        }
+        else if (health < maxHealth / 3)
+        {
+            myAudioSource.PlayOneShot(AudioClipVeryBroken);
+        }
+        else if (health < (2 * maxHealth / 3))
+        {
+            myAudioSource.PlayOneShot(AudioClipBitBroken);
         }
     }
 
@@ -57,6 +85,8 @@ public class Door : MonoBehaviour
         //unfinished, add broken up mesh then break apart in script when thats in
         completelyBroken.gameObject.SetActive(true);
         veryBroken.gameObject.SetActive(false);
+        myAudioSource.PlayOneShot(AudioClipCompletelyBroken);
+        Destroy(knob.gameObject);
         Destroy(this);
     }
 

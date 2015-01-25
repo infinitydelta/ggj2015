@@ -17,7 +17,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: New Layer
-    m_StateMachine: {fileID: 110700420}
+    m_StateMachine: {fileID: 110725928}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -26,15 +26,35 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &110126420
+--- !u!1101 &110154790
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110293930}
-  m_DstState: {fileID: 110275398}
+  m_SrcState: {fileID: 110239878}
+  m_DstState: {fileID: 110239878}
+  m_TransitionDuration: .25
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: .75
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110175548
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110233120}
+  m_DstState: {fileID: 110239878}
   m_TransitionDuration: .25
   m_TransitionOffset: 0
   m_Conditions:
@@ -46,22 +66,7 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1102 &110275398
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: door_open
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: b6616e267f51b8c49953a14398c687f5, type: 2}
-  m_ParentStateMachine: {fileID: 110700420}
-  m_Position: {x: 252, y: 156, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
---- !u!1102 &110293930
+--- !u!1102 &110233120
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
@@ -71,32 +76,47 @@ State:
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 012914135a7b94a4cb5e5a12924ec9a2, type: 2}
-  m_ParentStateMachine: {fileID: 110700420}
-  m_Position: {x: -108, y: 180, z: 0}
+  m_ParentStateMachine: {fileID: 110725928}
+  m_Position: {x: -168, y: -72, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1107 &110700420
+--- !u!1102 &110239878
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: door_open
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: b6616e267f51b8c49953a14398c687f5, type: 2}
+  m_ParentStateMachine: {fileID: 110725928}
+  m_Position: {x: 228, y: -108, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1107 &110725928
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: New Layer
-  m_DefaultState: {fileID: 110293930}
+  m_DefaultState: {fileID: 110233120}
   m_States:
-  - {fileID: 110293930}
-  - {fileID: 110275398}
+  - {fileID: 110233120}
+  - {fileID: 110239878}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110275398}
+      first: {fileID: 110239878}
       second: []
     data:
-      first: {fileID: 110293930}
+      first: {fileID: 110233120}
       second:
-      - {fileID: 110126420}
+      - {fileID: 110175548}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
