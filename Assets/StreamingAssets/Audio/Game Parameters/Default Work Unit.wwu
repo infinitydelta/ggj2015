@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AE626BCA-0316-4D65-B33B-79EE34835CED}" SchemaVersion="69">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{AE626BCA-0316-4D65-B33B-79EE34835CED}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="FootstepsPanning" ID="{AC95CB69-5DBC-4B3A-8B8B-EEFFE2081EB0}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0.5"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

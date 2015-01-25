@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3DA77D7C-5128-4244-9FD1-125CAD5F5684}" SchemaVersion="69">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{3DA77D7C-5128-4244-9FD1-125CAD5F5684}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="BGM" ID="{1B2A111F-A25E-4600-A304-2E3EB377BBE9}">
+					<ChildrenList>
+						<Action Name="Play" ID="{DE07B1CF-7748-483D-AAC0-D3D666A51A19}" ShortID="328499890" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{3DD09517-D1CF-4FBA-9B9A-205EA115FD64}" Global="false">
+									<ObjectRef Name="Bass" ID="{B8352024-411B-42C9-A55D-7333F4EFEB69}" WorkUnitID="{A33CA363-7028-41F0-BAA4-9EABF875342A}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Play" ID="{F0346B14-1AAC-473F-A453-CF2EC9576CA6}" ShortID="844317222" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{1949887A-C95C-4EED-9E03-A530793B6DAF}" Global="false">
+									<ObjectRef Name="Melody" ID="{FFBE8C78-D3B1-4C90-942C-53F79EAD56A4}" WorkUnitID="{A33CA363-7028-41F0-BAA4-9EABF875342A}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Victory" ID="{2FC7EB1D-D850-4142-B481-3D233C490CB1}">
+					<ChildrenList>
+						<Action Name="Play" ID="{37A94BF9-D50D-4DA5-8F2B-9030DB306A33}" ShortID="789458648" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{C5BC12D5-2D24-4C1E-A503-BC89531C23A7}" Global="false">
+									<ObjectRef Name="Victory" ID="{031582DA-D200-4A50-95CC-B17989ECFC04}" WorkUnitID="{1E0FA55D-F56A-4C85-8BCD-A4A287656B46}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_BGM" ID="{B8150B55-1A0C-4F64-AF77-03BBFCA1C34D}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{BC6C2E18-A897-4DE6-91F0-383256DB0461}" ShortID="848711038" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{C60349D7-BE21-4A9B-A155-9056BBECC0A8}" Global="false">
+									<ObjectRef Name="Bass" ID="{B8352024-411B-42C9-A55D-7333F4EFEB69}" WorkUnitID="{A33CA363-7028-41F0-BAA4-9EABF875342A}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Stop" ID="{6A0C0645-6817-47B3-AFBE-5CF5662113A2}" ShortID="556944241" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{0150C692-BC52-44BE-9233-11B336E0FF6F}" Global="false">
+									<ObjectRef Name="Melody" ID="{FFBE8C78-D3B1-4C90-942C-53F79EAD56A4}" WorkUnitID="{A33CA363-7028-41F0-BAA4-9EABF875342A}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Footsteps" ID="{67D38060-1B8B-46D0-974B-8E842FE71314}">
+					<ChildrenList>
+						<Action Name="Play" ID="{56B491D4-D1C3-4989-929E-EEFB47F08B6B}" ShortID="533598487" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{11D1AA8F-D18A-4D9C-8A5E-5E2C966B28AD}" Global="false">
+									<ObjectRef Name="Rug" ID="{CBB712AF-D79C-4140-A8BB-EA1585979969}" WorkUnitID="{1E0FA55D-F56A-4C85-8BCD-A4A287656B46}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Grab" ID="{129E48AC-0574-456A-A143-3C240E928646}">
+					<ChildrenList>
+						<Action Name="Play" ID="{96D82290-BCD9-46F5-ADE1-4501EB99AFDB}" ShortID="1049387654" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{2F1BD140-2005-4D46-8BE4-FA68A65B0C25}" Global="false">
+									<ObjectRef Name="Grab" ID="{F04155ED-F601-4C44-8722-DDAF95582C44}" WorkUnitID="{1E0FA55D-F56A-4C85-8BCD-A4A287656B46}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

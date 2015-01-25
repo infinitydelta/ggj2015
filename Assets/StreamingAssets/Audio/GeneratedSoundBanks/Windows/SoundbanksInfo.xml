@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" SchemaVersion="10" SoundbankVersion="112">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<SoundBanks>
+		<SoundBank Id="680327799" Language="SFX">
+			<ShortName>GGJ</ShortName>
+			<Path>GGJ.bnk</Path>
+			<IncludedEvents>
+				<Event Id="412724365" Name="BGM"/>
+				<Event Id="2385628198" Name="Footsteps"/>
+				<Event Id="906520831" Name="Grab"/>
+				<Event Id="1073466678" Name="Stop_BGM"/>
+				<Event Id="2716678721" Name="Victory"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="37019019" Language="SFX">
+					<ShortName>smoke1.wav</ShortName>
+					<Path>SFX\smoke1_7761C3CB.wem</Path>
+				</File>
+				<File Id="80790185" Language="SFX">
+					<ShortName>bass3.wav</ShortName>
+					<Path>SFX\bass3_7761C3CB.wem</Path>
+				</File>
+				<File Id="110202093" Language="SFX">
+					<ShortName>cat1.wav</ShortName>
+					<Path>SFX\cat1_7761C3CB.wem</Path>
+				</File>
+				<File Id="218156278" Language="SFX">
+					<ShortName>SFX - Footsteps6.wav</ShortName>
+					<Path>SFX\SFX - Footsteps6_DDC98EF4.wem</Path>
+				</File>
+				<File Id="230705763" Language="SFX">
+					<ShortName>SFX - Footsteps8.wav</ShortName>
+					<Path>SFX\SFX - Footsteps8_DDC98EF4.wem</Path>
+				</File>
+				<File Id="258802622" Language="SFX">
+					<ShortName>SFX - Footsteps2.wav</ShortName>
+					<Path>SFX\SFX - Footsteps2_DDC98EF4.wem</Path>
+				</File>
+				<File Id="259353165" Language="SFX">
+					<ShortName>buzz2.wav</ShortName>
+					<Path>SFX\buzz2_7761C3CB.wem</Path>
+				</File>
+				<File Id="318760442" Language="SFX">
+					<ShortName>SFX - Footsteps3.wav</ShortName>
+					<Path>SFX\SFX - Footsteps3_DDC98EF4.wem</Path>
+				</File>
+				<File Id="355782575" Language="SFX">
+					<ShortName>bass2.wav</ShortName>
+					<Path>SFX\bass2_7761C3CB.wem</Path>
+				</File>
+				<File Id="456127427" Language="SFX">
+					<ShortName>wop1.wav</ShortName>
+					<Path>SFX\wop1_7761C3CB.wem</Path>
+				</File>
+				<File Id="463710097" Language="SFX">
+					<ShortName>smoke2.wav</ShortName>
+					<Path>SFX\smoke2_7761C3CB.wem</Path>
+				</File>
+				<File Id="465849157" Language="SFX">
+					<ShortName>piano2.wav</ShortName>
+					<Path>SFX\piano2_7761C3CB.wem</Path>
+				</File>
+				<File Id="486749135" Language="SFX">
+					<ShortName>piano1.wav</ShortName>
+					<Path>SFX\piano1_7761C3CB.wem</Path>
+				</File>
+				<File Id="581712122" Language="SFX">
+					<ShortName>bass1.wav</ShortName>
+					<Path>SFX\bass1_7761C3CB.wem</Path>
+				</File>
+				<File Id="605183820" Language="SFX">
+					<ShortName>bass4.wav</ShortName>
+					<Path>SFX\bass4_7761C3CB.wem</Path>
+				</File>
+				<File Id="613586869" Language="SFX">
+					<ShortName>wop2.wav</ShortName>
+					<Path>SFX\wop2_7761C3CB.wem</Path>
+				</File>
+				<File Id="631150189" Language="SFX">
+					<ShortName>SFX - Footsteps5.wav</ShortName>
+					<Path>SFX\SFX - Footsteps5_DDC98EF4.wem</Path>
+				</File>
+				<File Id="631653241" Language="SFX">
+					<ShortName>grab_success.wav</ShortName>
+					<Path>SFX\grab_success_DDC98EF4.wem</Path>
+				</File>
+				<File Id="642165184" Language="SFX">
+					<ShortName>bass5.wav</ShortName>
+					<Path>SFX\bass5_7761C3CB.wem</Path>
+				</File>
+				<File Id="758967010" Language="SFX">
+					<ShortName>SFX - Footsteps4.wav</ShortName>
+					<Path>SFX\SFX - Footsteps4_DDC98EF4.wem</Path>
+				</File>
+				<File Id="778765182" Language="SFX">
+					<ShortName>SFX - Footsteps7.wav</ShortName>
+					<Path>SFX\SFX - Footsteps7_DDC98EF4.wem</Path>
+				</File>
+				<File Id="780657829" Language="SFX">
+					<ShortName>buzz1.wav</ShortName>
+					<Path>SFX\buzz1_7761C3CB.wem</Path>
+				</File>
+				<File Id="911513983" Language="SFX">
+					<ShortName>SFX - Footsteps1.wav</ShortName>
+					<Path>SFX\SFX - Footsteps1_DDC98EF4.wem</Path>
+				</File>
+				<File Id="966421501" Language="SFX">
+					<ShortName>cat2.wav</ShortName>
+					<Path>SFX\cat2_7761C3CB.wem</Path>
+				</File>
+				<File Id="1045429237" Language="SFX">
+					<ShortName>Victory.wav</ShortName>
+					<Path>SFX\Victory_DDC98EF4.wem</Path>
+				</File>
+				<File Id="1056351461" Language="SFX">
+					<ShortName>grab_error.wav</ShortName>
+					<Path>SFX\grab_error_DDC98EF4.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

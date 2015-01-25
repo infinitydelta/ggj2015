@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6A608B30-8194-4FC5-A798-487CF54DD3E6}" SchemaVersion="69">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{6A608B30-8194-4FC5-A798-487CF54DD3E6}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Footsteps" ID="{7266E046-EBAD-4DEA-B215-78644C272E77}">
+					<ChildrenList>
+						<Switch Name="Rug" ID="{4D4327A7-C154-4497-9253-52061F7E1A0D}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Grab" ID="{487A4A5A-215F-4C81-8FCC-E75E15735A66}">
+					<ChildrenList>
+						<Switch Name="Fail" ID="{6917A150-18AB-42AD-B190-873750753E62}"/>
+						<Switch Name="Success" ID="{788F8DC9-7DCB-4447-BA13-B471A77E4B98}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

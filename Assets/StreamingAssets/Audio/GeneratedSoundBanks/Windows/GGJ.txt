@@ -1,0 +1,47 @@
+Event	ID	Name			Wwise Object Path	Notes
+	412724365	BGM			\Default Work Unit\BGM	
+	906520831	Grab			\Default Work Unit\Grab	
+	1073466678	Stop_BGM			\Default Work Unit\Stop_BGM	
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+	2716678721	Victory			\Default Work Unit\Victory	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	906520831	Grab			\Default Work Unit\Grab	
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	2596272617	Fail	Grab			
+	3625060726	Success	Grab			
+	712161697	Rug	Footsteps			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1925215073	FootstepsPanning			\Default Work Unit\FootstepsPanning	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	37019019	smoke1	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\smoke1_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\smoke1\smoke1		1705696
+	80790185	bass3	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\bass3_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Bass\bass3\bass3		1694672
+	110202093	cat1	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\cat1_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\cat1\cat1		1736564
+	218156278	SFX - Footsteps6	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\SFX - Footsteps6_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Footsteps\Rug\SFX - Footsteps6		111952
+	230705763	SFX - Footsteps8	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\SFX - Footsteps8_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Footsteps\Rug\SFX - Footsteps8		111952
+	258802622	SFX - Footsteps2	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\SFX - Footsteps2_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Footsteps\Rug\SFX - Footsteps2		111952
+	259353165	buzz2	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\buzz2_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\buzz2\buzz2		1694672
+	318760442	SFX - Footsteps3	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\SFX - Footsteps3_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Footsteps\Rug\SFX - Footsteps3		113528
+	355782575	bass2	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\bass2_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Bass\bass2\bass2		1694672
+	456127427	wop1	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\wop1_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\wop1\wop1		1694672
+	463710097	smoke2	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\smoke2_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\smoke2\smoke2		1705696
+	465849157	piano2	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\piano2_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\piano2\piano2		1694672
+	486749135	piano1	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\piano1_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\piano1\piano1		1694672
+	581712122	bass1	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\bass1_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Bass\bass1\bass1		1694672
+	605183820	bass4	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\bass4_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Bass\bass4\bass4		1694672
+	613586869	wop2	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\wop2_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\wop2\wop2		1694672
+	631150189	SFX - Footsteps5	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\SFX - Footsteps5_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Footsteps\Rug\SFX - Footsteps5		111952
+	631653241	grab_success	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\grab_success_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Grab\grab_success		37196
+	642165184	bass5	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\bass5_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Bass\bass5\bass5		1694672
+	758967010	SFX - Footsteps4	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\SFX - Footsteps4_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Footsteps\Rug\SFX - Footsteps4		111952
+	778765182	SFX - Footsteps7	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\SFX - Footsteps7_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Footsteps\Rug\SFX - Footsteps7		111952
+	780657829	buzz1	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\buzz1_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\buzz1\buzz1		1694672
+	911513983	SFX - Footsteps1	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\SFX - Footsteps1_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Footsteps\Rug\SFX - Footsteps1		111952
+	966421501	cat2	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\cat2_7761C3CB.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Melody\cat2\cat2		1736564
+	1045429237	Victory	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\Victory_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Victory		351548
+	1056351461	grab_error	C:\Users\Eu-Ann\Documents\WwiseProjects\GGJ\.cache\Windows\SFX\grab_error_DDC98EF4.wem		\Actor-Mixer Hierarchy\SFX\Grab\grab_error		366044
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7E39E22E-400A-4AE3-B7BD-A768BBE5D23D}" SchemaVersion="69">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{7E39E22E-400A-4AE3-B7BD-A768BBE5D23D}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="GGJ" ID="{18D30629-3464-4665-A9E7-84A4C6130765}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Victory" ID="{2FC7EB1D-D850-4142-B481-3D233C490CB1}" WorkUnitID="{3DA77D7C-5128-4244-9FD1-125CAD5F5684}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="BGM" ID="{1B2A111F-A25E-4600-A304-2E3EB377BBE9}" WorkUnitID="{3DA77D7C-5128-4244-9FD1-125CAD5F5684}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Stop_BGM" ID="{B8150B55-1A0C-4F64-AF77-03BBFCA1C34D}" WorkUnitID="{3DA77D7C-5128-4244-9FD1-125CAD5F5684}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Footsteps" ID="{67D38060-1B8B-46D0-974B-8E842FE71314}" WorkUnitID="{3DA77D7C-5128-4244-9FD1-125CAD5F5684}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Grab" ID="{129E48AC-0574-456A-A143-3C240E928646}" WorkUnitID="{3DA77D7C-5128-4244-9FD1-125CAD5F5684}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
