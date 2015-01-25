@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.33999991, y: .349999964, z: 2.15000033}
+  m_LocalPosition: {x: -2.33999991, y: .899999976, z: -3.58999991}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 456326}
@@ -249,19 +249,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 156326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b3b066ba5131945926dc1d3a1299b1, type: 3}
+  m_Script: {fileID: 11500000, guid: f13b6f6e045f7134c8078ce429797571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myTitles:
   - You were born to do this
   - This is your destiny
-  - Gump
-  - Super Ambiguous
-  - What do we do now?
   invisibleTime: 0
   fadeInTime: 2
-  stayTime: 6
-  fadeOutTime: 8
+  stayTime: 4
+  fadeOutTime: 6
 --- !u!114 &11456324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,9 +267,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 156322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d97448ce63f4e44f9dc9a0f482b949e, type: 3}
+  m_Script: {fileID: 11500000, guid: dc1e2d5bff6da9f4bb847c1bcc22bfe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invisibleTime: 0
   fadeInTime: 0
   stayTime: 8
   fadeOutTime: 11
@@ -284,7 +282,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 156324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb2a1da2e52a7054d9324d6f6b1ae065, type: 3}
+  m_Script: {fileID: 11500000, guid: 5937bd83c0e86ce40b91eb55a98edce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 11
