@@ -13,8 +13,6 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("buts");
-
         if (health <= 0f)
         {
             GetComponent<PlayerMotion>().enabled = false;
@@ -25,7 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag != "Player" && col.gameObject.tag != "Environment"&&col.rigidbody !=null&&col.rigidbody.velocity.magnitude>damageVelCutoff)
+        if (col.gameObject.tag != "Player" && col.gameObject.tag != "Environment" && col.rigidbody !=null && col.rigidbody.velocity.magnitude>damageVelCutoff)
         {
             
             health -= col.relativeVelocity.magnitude * col.rigidbody.mass;
