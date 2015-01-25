@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f52310ce04702489160c592a01990b, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{3DA77D7C-5128-4244-9FD1-125CAD5F5684}'
+    List:
+    - Name: BGM
+      Path: Default Work Unit\BGM
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: BGM
+        ObjectType: 3
+      ID: 412724365
+      Guid: 1f112a1b5ea20046a3042e3eb377bbe9
+      maxAttenuation: 0
+    - Name: Footsteps
+      Path: Default Work Unit\Footsteps
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Footsteps
+        ObjectType: 3
+      ID: -1909339098
+      Guid: 6080d3678b1bd046974b8e842fe71314
+      maxAttenuation: 0
+    - Name: Grab
+      Path: Default Work Unit\Grab
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Grab
+        ObjectType: 3
+      ID: 906520831
+      Guid: ac489e1274056a45a1433c240e928646
+      maxAttenuation: 0
+    - Name: Stop_BGM
+      Path: Default Work Unit\Stop_BGM
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_BGM
+        ObjectType: 3
+      ID: 1073466678
+      Guid: 550b15b80c1a644faf7703bbfca1c34d
+      maxAttenuation: 0
+    - Name: Victory
+      Path: Default Work Unit\Victory
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Victory
+        ObjectType: 3
+      ID: -1578288575
+      Guid: 1debc72f50d84241b4813d233c490cb1
+      maxAttenuation: 0
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{94EF4939-5BCB-4C7F-A182-B0CACF8E8F75}'
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{4A1F6BA5-3C3D-4371-971D-A5CFA793BFF1}'
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{6A608B30-8194-4FC5-A798-487CF54DD3E6}'
+    List:
+    - Name: Footsteps
+      Path: Default Work Unit\Footsteps
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Footsteps
+        ObjectType: 11
+      ID: -1909339098
+      Guid: 46e06672adebea4db21578644c272e77
+      values:
+      - Rug
+      ValueIcons:
+      - ElementName: Rug
+        ObjectType: 10
+      valueIDs: a1b9722a
+      ValueGuids:
+      - bytes: a727434d54c19744925352061f7e1a0d
+    - Name: Grab
+      Path: Default Work Unit\Grab
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Grab
+        ObjectType: 11
+      ID: 906520831
+      Guid: 5a4a7a485f21814c8fcce75e15735a66
+      values:
+      - Fail
+      - Success
+      ValueIcons:
+      - ElementName: Fail
+        ObjectType: 10
+      - ElementName: Success
+        ObjectType: 10
+      valueIDs: e9f9bf9a760912d8
+      ValueGuids:
+      - bytes: 50a11769ab18ad42b190873750753e62
+      - bytes: c98d8f78cb7d4744ba13b471a77e4b98
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{7E39E22E-400A-4AE3-B7BD-A768BBE5D23D}'
+    List:
+    - Name: GGJ
+      Path: Default Work Unit\GGJ
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GGJ
+        ObjectType: 7
+      ID: 680327799
+      Guid: 2906d31864346546a9e784a4c6130765
+  ExpandedItems:
+  - /GGJ
+  - /GGJ/Events
+  - /GGJ/Events/Default Work Unit
+  m_lastPopulateTimePsrt1: -988965538
+  m_lastPopulateTimePart2: -1999501715
+  autoPopulateEnabled: 1
+  basePath: Audio\GeneratedSoundBanks
+  language: English(US)
+  defaultPoolSize: 4096
+  lowerPoolSize: 2048
+  streamingPoolSize: 1024
+  memoryCutoffThreshold: .949999988
