@@ -354,7 +354,7 @@ MonoBehaviour:
   right_left_look_speed: 5
   up_down_look_speed: 5
   look_bounds: 60
-  jump_force: 1000
+  jump_force: 1500
   controllerNumber: 1
 --- !u!114 &11400006
 MonoBehaviour:

@@ -91,6 +91,10 @@ public class PlayerGrab : MonoBehaviour {
 	            if (myGrabbedGameObject.rigidbody.velocity.magnitude > grabBreakTolerance)
 	            {
 	                myGrabbedGameObject.rigidbody.useGravity = true;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
                     foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>())
                     {
                         Physics.IgnoreCollision(col, collider, false);
@@ -98,8 +102,13 @@ public class PlayerGrab : MonoBehaviour {
                     foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>())
                     {
                         Physics.IgnoreCollision(col, collider, false);
+<<<<<<< HEAD
                     }
 	                myGrabbedGameObject = null;
+=======
+                    } 
+                    myGrabbedGameObject = null;
+>>>>>>> origin/master
 	                itemIsGrabbed = false;
 	            }
 	            else
