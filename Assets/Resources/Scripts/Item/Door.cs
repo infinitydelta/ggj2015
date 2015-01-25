@@ -4,6 +4,9 @@ using System.Xml.Schema;
 
 public class Door : MonoBehaviour
 {
+    public AudioClip AudioClipBitBroken;
+    public AudioClip AudioClipVeryBroken;
+    public AudioClip AudioClipCompletelyBroken;
     bool opened = false;
     public float health = 300;
     private float maxHealth;
