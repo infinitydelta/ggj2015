@@ -1,12 +1,16 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class WinConditions : MonoBehaviour
 {
+
+    public float numLightbulbs;
 	// Use this for initialization
 	void Start ()
 	{
+	    numLightbulbs = GameObject.FindGameObjectsWithTag("Bulb").Count();
 	}
 	
 	// Update is called once per frame
