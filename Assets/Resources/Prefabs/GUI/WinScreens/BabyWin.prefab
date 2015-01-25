@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5292182, y: .5, z: -7.74585056}
+  m_LocalPosition: {x: -1.50757182, y: .597433567, z: -7.64058018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22474154}
@@ -271,8 +271,8 @@ MonoBehaviour:
   - You Made Babby
   invisibleTime: 0
   fadeInTime: 2
-  stayTime: 8
-  fadeOutTime: 8
+  stayTime: 5
+  fadeOutTime: 7
 --- !u!222 &22274156
 CanvasRenderer:
   m_ObjectHideFlags: 1

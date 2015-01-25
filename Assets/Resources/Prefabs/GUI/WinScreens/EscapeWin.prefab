@@ -129,8 +129,8 @@ MonoBehaviour:
   - You Escape Into the Abyss
   invisibleTime: 0
   fadeInTime: 2
-  stayTime: 8
-  fadeOutTime: 8
+  stayTime: 5
+  fadeOutTime: 7
 --- !u!114 &11491514
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -245,8 +245,8 @@ MonoBehaviour:
   - Lights Out
   invisibleTime: 0
   fadeInTime: 2
-  stayTime: 8
-  fadeOutTime: 8
+  stayTime: 5
+  fadeOutTime: 7
 --- !u!114 &11432812
 MonoBehaviour:
   m_ObjectHideFlags: 1
