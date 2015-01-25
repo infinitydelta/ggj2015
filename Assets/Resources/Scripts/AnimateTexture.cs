@@ -8,6 +8,7 @@ public class AnimateTexture : MonoBehaviour
     public String name = "bread";
 
     private Texture[] frames = new Texture[6];
+    private Texture[] idleFrames = new Texture[6];
     private Material mat;
     private int curFrameStart;
     private int curFrame;
@@ -15,6 +16,8 @@ public class AnimateTexture : MonoBehaviour
     private Camera otherCamera;
     Vector3 origScale;
     GameObject child;
+    private IEnumerator curEnum;
+    private bool animating;
 
 
     enum directions
@@ -39,8 +42,17 @@ public class AnimateTexture : MonoBehaviour
         frames[3] = Resources.Load<Texture>("Sprites/" + name + "_walk_front2");
         frames[4] = Resources.Load<Texture>("Sprites/" + name + "_walk_side1");
         frames[5] = Resources.Load<Texture>("Sprites/" + name + "_walk_side2");
+
+        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_back_idle1");
+        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_back_idle2");
+        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_front_idle1");
+        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_front_idle2");
+        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_idle_side1");
+        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_idle_side2");
+
         mat.SetTexture(0,frames[4]);
-        StartCoroutine(playFrames());
+        curEnum = playFrames();
+        StartCoroutine(curEnum);
 
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         if (players[0].GetComponent<PlayerMotion>().controllerNumber != GetComponent<PlayerMotion>().controllerNumber)
@@ -85,6 +97,18 @@ public class AnimateTexture : MonoBehaviour
                 child.transform.localScale = new Vector3(origScale.x, origScale.y, origScale.z);
             }
         }
+
+	    if (animating&&rigidbody.velocity.magnitude<1)
+	    {
+	        StopCoroutine(curEnum);
+	        animating = false;
+            
+        }
+	    else if(!animating&&rigidbody.velocity.magnitude>1)
+	    {
+	        StartCoroutine(curEnum);
+	        animating = true;
+	    }
 
 	}
 
