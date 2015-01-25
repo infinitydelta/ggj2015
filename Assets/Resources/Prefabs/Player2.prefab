@@ -176,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.34299994, y: 0, z: 0}
+  m_LocalPosition: {x: 4.71999979, y: 1.57000005, z: -13.8000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -371,11 +371,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac294e0cdc522942b6577dcee5d52de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 500
+  throwForce: 700
   grabBreakTolerance: 1.29999995
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
-  floorYPosition: -2
+  floorYPosition: .5
 --- !u!114 &11449080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26778c136816edb4384f64c60bc91e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageVelCutoff: .200000003
+  damageVelCutoff: 6
   health: 35
 --- !u!124 &12400000
 Behaviour:

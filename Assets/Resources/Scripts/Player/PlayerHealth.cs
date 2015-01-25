@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             GetComponent<PlayerMotion>().enabled = false;
             GetComponent<PlayerGrab>().enabled = false;
-            GetComponent<AnimateTexture>().enabled = false;
+            GetComponent<AnimateTexture>().dead();
             rigidbody.constraints = RigidbodyConstraints.None;
         }
 	}
