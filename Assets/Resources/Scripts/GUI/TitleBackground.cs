@@ -7,6 +7,7 @@ public class TitleBackground : MonoBehaviour
     private float myAlpha = 0f;
     private float startTime;
     private float elapsedTime;
+    public float invisibleTime = 0.0f;
     public float fadeInTime = 0.0f;
     public float stayTime = 8.0f;
     public float fadeOutTime = 11.0f;
@@ -21,7 +22,11 @@ public class TitleBackground : MonoBehaviour
     void Update()
     {
         elapsedTime = Time.time - startTime;
-        if (elapsedTime < fadeInTime)
+        if (elapsedTime < invisibleTime)
+        {
+            
+        }
+        else if (elapsedTime < fadeInTime)
         {
             myAlpha = (elapsedTime / fadeInTime);
             myImage.color = new Color(0.0f, 0.0f, 0.0f, myAlpha);
