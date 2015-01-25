@@ -15,6 +15,7 @@ public class AnimateTexture : MonoBehaviour
     private GameObject otherPlayer;
     private Camera otherCamera;
     Vector3 origScale;
+    GameObject child;
 
 
     enum directions
@@ -28,6 +29,9 @@ public class AnimateTexture : MonoBehaviour
 	
     void Start ()
     {
+        child = transform.FindChild("Billboard").gameObject;
+
+
         origScale = transform.localScale;
         mat = GetComponentInChildren<Renderer>().material;
         frames[0] = Resources.Load<Texture>("Sprites/" + name + "_walk_back1");
@@ -55,7 +59,7 @@ public class AnimateTexture : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        //transform.LookAt(transform.position + otherCamera.transform.rotation * Vector3.back,otherCamera.transform.rotation * Vector3.up);
+        child.transform.LookAt(transform.position + otherCamera.transform.rotation * Vector3.back,otherCamera.transform.rotation * Vector3.up);
         float angleBetween = Vector3.Angle(transform.forward, otherPlayer.transform.forward);
         float dotAngle = Vector3.Dot(transform.forward, otherPlayer.transform.forward);
 	    if (angleBetween > 135 && curFrameStart!=(int)directions.front)
@@ -76,11 +80,10 @@ public class AnimateTexture : MonoBehaviour
             mat.SetTexture(0, frames[(int)directions.side]);
             float rightAngle = Vector3.Angle(otherPlayer.transform.right, transform.forward);
             if(rightAngle>90)
-            transform.localScale = new Vector3(origScale.x, origScale.y, origScale.z);
+                child.transform.localScale = new Vector3(-1*origScale.x, origScale.y, origScale.z);
             else
             {
-                transform.localScale = new Vector3(-1*origScale.x, origScale.y, origScale.z);
-
+                child.transform.localScale = new Vector3(origScale.x, origScale.y, origScale.z);
             }
         }
 
