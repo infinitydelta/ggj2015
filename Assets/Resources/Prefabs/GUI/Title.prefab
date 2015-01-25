@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0c2c7ba61139f78438b4977993942f7e, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -254,7 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTitles:
   - You were born to do this
-  - This is your destiny
   invisibleTime: 0
   fadeInTime: 2
   stayTime: 4
@@ -286,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 11
-  loadLevel: None
+  reload: 0
 --- !u!222 &22256324
 CanvasRenderer:
   m_ObjectHideFlags: 1
