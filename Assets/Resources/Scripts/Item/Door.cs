@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Door : MonoBehaviour
 {
-
+    bool opened = false;
     public float health = 300;
     
 	// Use this for initialization
@@ -30,10 +30,20 @@ public class Door : MonoBehaviour
         }
     }
 
+
     void breakApart()
     {
         //unfinished, add broken up mesh then break apart in script when thats in
         Destroy(gameObject);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("Key_door") && !opened)
+        {
+            opened = true;
+            GetComponent<Animator>().SetTrigger("open");
+
+        }
+    }
 }
