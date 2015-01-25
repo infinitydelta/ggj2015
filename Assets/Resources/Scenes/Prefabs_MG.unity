@@ -1147,7 +1147,7 @@ Transform:
   - {fileID: 1563770772}
   - {fileID: 1384646067}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
 --- !u!114 &675662862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,7 +1388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 40d5e5d7d63871545999c5b96d5f17fe, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40d5e5d7d63871545999c5b96d5f17fe, type: 2}
@@ -1501,7 +1501,7 @@ Transform:
   m_LocalScale: {x: .5, y: .699999988, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1001 &829507413
 Prefab:
   m_ObjectHideFlags: 0
@@ -1640,7 +1640,7 @@ Transform:
   - {fileID: 1637893582}
   - {fileID: 1708618830}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!136 &933720757
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3008,9 +3008,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f7b74bdc9444e429760578b3ded949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_motion: {fileID: 1289069830}
-  player: {fileID: 675662861}
-  particles: {fileID: 1502403445}
 --- !u!199 &1502403444
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -5850,7 +5847,7 @@ Transform:
   - {fileID: 1489171077}
   - {fileID: 1138964710}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1 &2031572609
 GameObject:
   m_ObjectHideFlags: 0
