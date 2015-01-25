@@ -31,7 +31,7 @@ public class PlayerGrab : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetAxis("p" + controllerNumber + "_Grab") != 0)
+        if (Input.GetAxis("p" + controllerNumber + "_Grab") == 1f)
         {
             if (grabButtonDown == false)
             {
@@ -70,7 +70,7 @@ public class PlayerGrab : MonoBehaviour {
                 grabButtonDown = true;
             }
         }
-        if (Input.GetAxis("p" + controllerNumber + "_Grab") == 0)
+        if (Input.GetAxis("p" + controllerNumber + "_Grab") != 1f)
         {
             grabButtonDown = false;
         }
