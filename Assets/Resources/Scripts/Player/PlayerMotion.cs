@@ -15,6 +15,7 @@ public class PlayerMotion : MonoBehaviour {
 	float rlRot;
 	bool grounded = false;
 	bool jumping = false;
+    private bool onOtherPlayer;
 
 	// Use this for initialization
 	void Start ()
@@ -36,7 +37,7 @@ public class PlayerMotion : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+        Debug.Log(onOtherPlayer);
 
 
 		//camera rotation
@@ -87,5 +88,31 @@ public class PlayerMotion : MonoBehaviour {
 			}
 		}
 	}
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            if(col.transform.position.y<transform.position.y)
+                onOtherPlayer = true;
+            else
+            {
+                onOtherPlayer = false;
+            }
+        }
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            onOtherPlayer = false;
+        }
+    }
+
+    bool getOnOtherPlayer()
+    {
+        return onOtherPlayer;
+    }
 
 }

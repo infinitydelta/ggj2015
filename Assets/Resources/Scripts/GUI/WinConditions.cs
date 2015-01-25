@@ -22,14 +22,14 @@ public class WinConditions : MonoBehaviour
     {
         GameObject temp = (GameObject)Instantiate(title, title.transform.position, Quaternion.identity);
         UnityEngine.UI.Text text = temp.GetComponent<UnityEngine.UI.Text>();
-        text.text = "Player 1 Wins";
+        temp.GetComponent<Title>().setupChildren(11, true, 6, 8, 11, 12, "Player 1 Wins", 0, 2, 11, 12);
     }
 
     public void playerTwoWinsKill()
     {
         GameObject temp = (GameObject)Instantiate(title, title.transform.position, Quaternion.identity);
-        UnityEngine.UI.Text text = temp.GetComponent<UnityEngine.UI.Text>();
-        text.text = "Player 2 Wins";
+        temp.GetComponent<Title>().setupChildren(11,true,6,8,11,12,"Player 2 Wins",0,2,11,12);
+
     }
 
     IEnumerator killFadeIn(String text)

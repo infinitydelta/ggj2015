@@ -16,6 +16,10 @@ public class TitleBackground : MonoBehaviour
     {
         myImage = GetComponent<UnityEngine.UI.Image>();
         startTime = Time.time;
+        if (invisibleTime > 0)
+        {
+            myImage.color = new Color(0, 0, 0, 0);
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +32,7 @@ public class TitleBackground : MonoBehaviour
         }
         else if (elapsedTime < fadeInTime)
         {
-            myAlpha = (elapsedTime / fadeInTime);
+            myAlpha = ((elapsedTime - invisibleTime )/ (fadeInTime-invisibleTime));
             myImage.color = new Color(0.0f, 0.0f, 0.0f, myAlpha);
         }
         else if (elapsedTime < stayTime)
