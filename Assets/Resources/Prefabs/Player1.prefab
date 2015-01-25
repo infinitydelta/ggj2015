@@ -323,6 +323,9 @@ MonoBehaviour:
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
   floorYPosition: .5
+  ceilingYPosition: 8
+  wallMinXPosition: -4
+  wallMaxXPosition: 4
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0409781facf19b740ad0cf1404c7ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcam: {fileID: 0}
+  pcam: {fileID: 2000000}
   forward_move_speed: 1000
   backward_move_speed: 800
   strafe_move_speed: 800
@@ -342,7 +345,7 @@ MonoBehaviour:
   up_down_look_speed: 5
   look_bounds: 60
   jump_force: 2000
-  controllerNumber: 0
+  controllerNumber: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

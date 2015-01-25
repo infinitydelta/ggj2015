@@ -174,8 +174,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.71999979, y: 1.57000005, z: -13.8000002}
+  m_LocalRotation: {x: .00225410936, y: -.0168293137, z: .00722673535, w: .99982971}
+  m_LocalPosition: {x: 4.71961403, y: 1.56999493, z: -13.7998953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0409781facf19b740ad0cf1404c7ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcam: {fileID: 0}
+  pcam: {fileID: 2000000}
   forward_move_speed: 1000
   backward_move_speed: 800
   strafe_move_speed: 800
@@ -358,7 +358,7 @@ MonoBehaviour:
   up_down_look_speed: 5
   look_bounds: 60
   jump_force: 2000
-  controllerNumber: 0
+  controllerNumber: 2
 --- !u!114 &11456272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,6 +388,9 @@ MonoBehaviour:
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
   floorYPosition: .5
+  ceilingYPosition: 8
+  wallMinXPosition: -4
+  wallMaxXPosition: 4
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
