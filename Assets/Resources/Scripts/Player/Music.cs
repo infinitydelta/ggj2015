@@ -11,8 +11,8 @@ public class Music : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mainAudio.volume = 1.0f;
-		bassAudio.volume = 0.8f;
+		//mainAudio.volume = 1.0f;
+		//bassAudio.volume = 0.8f;
 	}
 	
 	// Update is called once per frame
