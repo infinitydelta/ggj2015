@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 64: {fileID: 6400000}
   - 23: {fileID: 2300000}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400002}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - 4: {fileID: 425850}
   - 54: {fileID: 5400000}
   - 54: {fileID: 5429670}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GrabPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - 114: {fileID: 11435776}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11429670}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - 92: {fileID: 9225818}
   - 124: {fileID: 12425818}
   - 81: {fileID: 8125818}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: PlayerCam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - 4: {fileID: 425856}
   - 135: {fileID: 13525818}
   - 114: {fileID: 11425820}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: JumpCol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameDuration: .5
   name: bread
-  playerID: 1
 --- !u!114 &11425818
 MonoBehaviour:
   m_ObjectHideFlags: 1

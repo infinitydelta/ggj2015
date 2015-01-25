@@ -33,17 +33,23 @@ public class PlayerGrab : MonoBehaviour {
                 if (itemIsGrabbed)
                 {
                     myGrabbedGameObject.rigidbody.useGravity = true;
-                    Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, false);
+                    foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>())
+                    {
+                        Physics.IgnoreCollision(col, collider, false);
+                    }
+                    foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>())
+                    {
+                        Physics.IgnoreCollision(col, collider, false);
+                    }
                     myGrabbedGameObject.rigidbody.AddForce(throwForce * pcam.transform.forward);
                     myGrabbedGameObject = null;
                     itemIsGrabbed = false;
                 }
                 else
                 {
-                    int layerfilter = 1 << 8;
-                    layerfilter = ~layerfilter;
+                    int layerMask = ~((1 << 8) | (1 << 9) | (1 << 10));
                     RaycastHit hit;
-                    if (Physics.Linecast(transform.position, grabTransform.position, out hit, layerfilter))
+                    if (Physics.Linecast(transform.position, grabTransform.position, out hit, layerMask))
                     {
                         if (hit.rigidbody != null)
                         {
@@ -72,7 +78,14 @@ public class PlayerGrab : MonoBehaviour {
 			else
 			{
 	            myGrabbedGameObject.rigidbody.useGravity = false;
-	            Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, true);
+                foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>())
+                {
+                    Physics.IgnoreCollision(col, collider, false);
+                }
+                foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>())
+                {
+                    Physics.IgnoreCollision(col, collider, false);
+                }
 
 	            //Break grab if object is moving violently
 	            if (myGrabbedGameObject.rigidbody.velocity.magnitude > grabBreakTolerance)
@@ -84,7 +97,7 @@ public class PlayerGrab : MonoBehaviour {
 	            }
 	            else
 	            {
-	                Vector3 positionDiff = (grabTransform.position - myGrabbedGameObject.collider.bounds.center);
+	                Vector3 positionDiff = (grabTransform.position - myGrabbedCollider.bounds.center);
 	                Vector3 angleDiff = new Vector3(0f, pcam.transform.eulerAngles.y - myGrabbedGameObject.transform.eulerAngles.y, 0f);
 	                if (angleDiff.x > 180f)
 	                    angleDiff.x -= 360f;
@@ -106,7 +119,7 @@ public class PlayerGrab : MonoBehaviour {
 	                myGrabbedGameObject.transform.eulerAngles = myGrabbedGameObject.transform.eulerAngles + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.angularVelocity;
 	                //Prevent clipping
 
-	                float minBoundY = myGrabbedGameObject.transform.position.y;
+                    float minBoundY = float.MaxValue;
 	                foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>()) {
 	                    if (col.bounds.min.y < minBoundY)
 	                        minBoundY = col.bounds.min.y;

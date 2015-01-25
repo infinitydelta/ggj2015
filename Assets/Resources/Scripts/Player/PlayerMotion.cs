@@ -60,13 +60,13 @@ public class PlayerMotion : MonoBehaviour {
 
         if (Input.GetAxis("p" + controllerNumber + "_MoveY") > 0)
         {
-            rigidbody.AddForce(Input.GetAxis("p" + controllerNumber + "_MoveY") * pcam.transform.forward * forward_move_speed);
+            rigidbody.AddForce(Input.GetAxis("p" + controllerNumber + "_MoveY") * new Vector3(pcam.transform.forward.x, 0f, pcam.transform.forward.z).normalized * forward_move_speed);
         }
         else if (Input.GetAxis("p" + controllerNumber + "_MoveY") < 0)
         {
-            rigidbody.AddForce(Input.GetAxis("p" + controllerNumber + "_MoveY") * pcam.transform.forward * backward_move_speed);
+            rigidbody.AddForce(Input.GetAxis("p" + controllerNumber + "_MoveY") * new Vector3(pcam.transform.forward.x, 0f, pcam.transform.forward.z).normalized * backward_move_speed);
         }
-        rigidbody.AddForce( Input.GetAxis("p" + controllerNumber + "_MoveX") * pcam.transform.right * strafe_move_speed);
+        rigidbody.AddForce(Input.GetAxis("p" + controllerNumber + "_MoveX") * new Vector3(pcam.transform.right.x, 0f, pcam.transform.right.z).normalized * strafe_move_speed);
 
 		
 		//jumping
