@@ -315,11 +315,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f371b251b810944837d0fd94d0c097, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bc10a198b6d4df4bb7f6675d416f2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameDuration: .5
-  name: bread
+  throwForce: 800
+  grabBreakTolerance: 1.29999995
+  grabEaseValue: 1.5
+  grabAngularEaseValue: 8
+  floorYPosition: .5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,14 +331,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac294e0cdc522942b6577dcee5d52de, type: 3}
+  m_Script: {fileID: 11500000, guid: 0409781facf19b740ad0cf1404c7ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 700
-  grabBreakTolerance: 1.29999995
-  grabEaseValue: 1.5
-  grabAngularEaseValue: 8
-  floorYPosition: -2
+  pcam: {fileID: 0}
+  forward_move_speed: 1000
+  backward_move_speed: 800
+  strafe_move_speed: 800
+  right_left_look_speed: 5
+  up_down_look_speed: 5
+  look_bounds: 60
+  jump_force: 2000
+  controllerNumber: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
