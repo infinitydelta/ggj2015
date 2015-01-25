@@ -17,7 +17,10 @@ public class PlayerMotion : MonoBehaviour {
 	bool jumping = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+	    udRot = transform.localEulerAngles.z;
+	    rlRot = transform.eulerAngles.y;
 	}
 
 	public void GroundEnter() {
