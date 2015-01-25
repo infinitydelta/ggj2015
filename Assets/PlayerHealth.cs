@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 
     public float damageVelCutoff = 10;
-    public float health = 100f;
+    public float health = 30f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             GetComponent<PlayerMotion>().enabled = false;
             GetComponent<PlayerGrab>().enabled = false;
+            GetComponent<AnimateTexture>().enabled = false;
             rigidbody.constraints = RigidbodyConstraints.None;
         }
 	}

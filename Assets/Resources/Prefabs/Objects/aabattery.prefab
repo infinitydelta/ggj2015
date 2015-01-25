@@ -46,7 +46,7 @@ GameObject:
   - 54: {fileID: 5448318}
   - 136: {fileID: 13648318}
   m_Layer: 0
-  m_Name: AABattery
+  m_Name: aabattery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
