@@ -157,19 +157,22 @@ public class PlayerGrab : MonoBehaviour {
                     if (minBoundY + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < floorYPosition)
                     {
                         myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, floorYPosition + myGrabbedGameObject.transform.position.y - minBoundY, myGrabbedGameObject.transform.position.z);
-                        //myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, 0f, myGrabbedGameObject.rigidbody.velocity.z);
+                        myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, 0f, myGrabbedGameObject.rigidbody.velocity.z);
                     }
                     if (maxBoundY + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y > ceilingYPosition)
                     {
                         myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, ceilingYPosition + myGrabbedGameObject.transform.position.y - maxBoundY, myGrabbedGameObject.transform.position.z);
+                        myGrabbedGameObject.rigidbody.velocity = new Vector3(myGrabbedGameObject.rigidbody.velocity.x, 0f, myGrabbedGameObject.rigidbody.velocity.z);
                     }
-                    if (minBoundX + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y < wallMinXPosition)
+                    if (minBoundX + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.x < wallMinXPosition)
                     {
-                        myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, wallMinXPosition + myGrabbedGameObject.transform.position.y - minBoundX, myGrabbedGameObject.transform.position.z);
+                        myGrabbedGameObject.transform.position = new Vector3(wallMinXPosition + myGrabbedGameObject.transform.position.y - minBoundX, myGrabbedGameObject.transform.position.y, myGrabbedGameObject.transform.position.z);
+                        myGrabbedGameObject.rigidbody.velocity = new Vector3(0f, myGrabbedGameObject.rigidbody.velocity.y, myGrabbedGameObject.rigidbody.velocity.z);
                     }
-                    if (maxBoundX + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.y > wallMaxXPosition)
+                    if (maxBoundX + (Time.deltaTime * 60f) * myGrabbedGameObject.rigidbody.velocity.x > wallMaxXPosition)
                     {
-                        myGrabbedGameObject.transform.position = new Vector3(myGrabbedGameObject.transform.position.x, wallMaxXPosition + myGrabbedGameObject.transform.position.y - maxBoundX, myGrabbedGameObject.transform.position.z);
+                        myGrabbedGameObject.transform.position = new Vector3(wallMaxXPosition + myGrabbedGameObject.transform.position.y - maxBoundX, myGrabbedGameObject.transform.position.y, myGrabbedGameObject.transform.position.z);
+                        myGrabbedGameObject.rigidbody.velocity = new Vector3(0f, myGrabbedGameObject.rigidbody.velocity.y, myGrabbedGameObject.rigidbody.velocity.z);
                     }
 	            }
 			}
