@@ -2373,7 +2373,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 2
     startSize:
-      scalar: 10
+      scalar: 8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2406,7 +2406,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startRotation:
-      scalar: 1.57079625
+      scalar: .34906584
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2421,7 +2421,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0
+          value: -1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4795,7 +4795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &850034393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11626,6 +11626,22 @@ Prefab:
     - target: {fileID: 459436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
       propertyPath: m_RootOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.minCurve.m_Curve.Array.data[0].value
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.scalar
+      value: .34906584
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.maxCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}

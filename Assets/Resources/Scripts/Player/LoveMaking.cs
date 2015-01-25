@@ -26,7 +26,7 @@ public class LoveMaking : MonoBehaviour {
             else {
 					particles.emissionRate = 0;
 			}
-			if(love_amount > 10f && !born){ //spawn baby in here
+			if(love_amount > 6f && !born){ //spawn baby in here
 			    born = true;
 			    love_amount = 0;
                 GameObject newBaby = (GameObject)Instantiate(Resources.Load("Prefabs/Objects/Baby"), transform.position, transform.rotation);
