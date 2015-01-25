@@ -17,7 +17,7 @@ public class AnimateTexture : MonoBehaviour
     Vector3 origScale;
     GameObject child;
     private IEnumerator curEnum;
-    private bool animating;
+    private bool idle = false;
 
 
     enum directions
@@ -44,11 +44,11 @@ public class AnimateTexture : MonoBehaviour
         frames[5] = Resources.Load<Texture>("Sprites/" + name + "_walk_side2");
 
         idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_back_idle1");
-        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_back_idle2");
-        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_front_idle1");
-        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_front_idle2");
-        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_idle_side1");
-        idleFrames[0] = Resources.Load<Texture>("Sprites/" + name + "_idle_side2");
+        idleFrames[1] = Resources.Load<Texture>("Sprites/" + name + "_back_idle2");
+        idleFrames[2] = Resources.Load<Texture>("Sprites/" + name + "_front_idle1");
+        idleFrames[3] = Resources.Load<Texture>("Sprites/" + name + "_front_idle2");
+        idleFrames[4] = Resources.Load<Texture>("Sprites/" + name + "_idle_side1");
+        idleFrames[5] = Resources.Load<Texture>("Sprites/" + name + "_idle_side2");
 
         mat.SetTexture(0,frames[4]);
         curEnum = playFrames();
@@ -73,41 +73,64 @@ public class AnimateTexture : MonoBehaviour
         child.transform.LookAt(transform.position + otherCamera.transform.rotation * Vector3.back,otherCamera.transform.rotation * Vector3.up);
         float angleBetween = Vector3.Angle(transform.forward, otherPlayer.transform.forward);
         float dotAngle = Vector3.Dot(transform.forward, otherPlayer.transform.forward);
-	    if (angleBetween > 135 && curFrameStart!=(int)directions.front)
+	    if (angleBetween > 135 && curFrameStart != (int) directions.front)
 	    {
-	        curFrameStart = (int)directions.front;
-	        curFrame = curFrameStart;   
-            mat.SetTexture(0,frames[(int)directions.front]);
-	    }
-        else if ((angleBetween < 45)&&curFrameStart != (int)directions.back)
-        {
-            curFrameStart = (int)directions.back;
-            curFrame = curFrameStart;
-            mat.SetTexture(0, frames[(int)directions.back]);
-        }
-        else if(angleBetween>45&&angleBetween<135&&curFrameStart!=(int)directions.side){
-            curFrameStart = (int)directions.side;
-            curFrame = (int)directions.side;
-            mat.SetTexture(0, frames[(int)directions.side]);
-            float rightAngle = Vector3.Angle(otherPlayer.transform.right, transform.forward);
-            if(rightAngle>90)
-                child.transform.localScale = new Vector3(-1*origScale.x, origScale.y, origScale.z);
-            else
-            {
-                child.transform.localScale = new Vector3(origScale.x, origScale.y, origScale.z);
-            }
-        }
 
-	    if (animating&&rigidbody.velocity.magnitude<1)
+	        curFrameStart = (int) directions.front;
+	        curFrame = curFrameStart;
+	        if (idle)
+	        {
+	            mat.SetTexture(0, frames[(int) directions.front]);
+	        }
+	        else
+	        {
+	            mat.SetTexture(0,idleFrames[(int)directions.front]);
+	        }
+	    }
+	    else if ((angleBetween < 45) && curFrameStart != (int) directions.back)
 	    {
-	        StopCoroutine(curEnum);
-	        animating = false;
+	        curFrameStart = (int) directions.back;
+	        curFrame = curFrameStart;
+	        if (idle)
+	        {
+	            mat.SetTexture(0, frames[(int) directions.back]);
+	        }
+	        else
+	        {
+	            mat.SetTexture(0,idleFrames[(int)directions.back]);
+	        }
+        }
+	    else if (angleBetween > 45 && angleBetween < 135 && curFrameStart != (int) directions.side)
+	    {
+	        curFrameStart = (int) directions.side;
+	        curFrame = (int) directions.side;
+	        if (idle)
+	        {
+	            mat.SetTexture(0, frames[(int) directions.side]);
+	        }
+	        else
+	        {
+	            mat.SetTexture(0,idleFrames[(int)directions.side]);
+	        }
+            float rightAngle = Vector3.Angle(otherPlayer.transform.right, transform.forward);
+	        if (rightAngle > 90)
+	            child.transform.localScale = new Vector3(-1*origScale.x, origScale.y, origScale.z);
+	        else
+	        {
+	            child.transform.localScale = new Vector3(origScale.x, origScale.y, origScale.z);
+	        }
+	    }
+
+	    if (idle && rigidbody.velocity.magnitude<3)
+	    {
+            mat.SetTexture(0,frames[curFrame]);
+            idle = false;
             
         }
-	    else if(!animating&&rigidbody.velocity.magnitude>1)
+        else if (!idle && rigidbody.velocity.magnitude > 3)
 	    {
-	        StartCoroutine(curEnum);
-	        animating = true;
+            mat.SetTexture(0,idleFrames[curFrame]);
+            idle = true;
 	    }
 
 	}
@@ -119,13 +142,29 @@ public class AnimateTexture : MonoBehaviour
             yield return new WaitForSeconds(frameDuration);
             if (curFrame == curFrameStart)
             {
-                curFrame ++;
-                mat.SetTexture(0, frames[curFrame]);
+                if (idle)
+                {
+                    curFrame ++;
+                    mat.SetTexture(0, frames[curFrame]);
+                }
+                else
+                {
+                    curFrame ++;
+                    mat.SetTexture(0, idleFrames[curFrame]);
+                }
             }
             else
             {
-                curFrame--;
-                mat.SetTexture(0,frames[curFrame]);
+                if (idle)
+                {
+                    curFrame--;
+                    mat.SetTexture(0, frames[curFrame]);
+                }
+                else
+                {
+                    curFrame --;
+                    mat.SetTexture(0,idleFrames[curFrame]);
+                }
             }
         }
     }
