@@ -49,7 +49,11 @@ public class WinConditions : MonoBehaviour
 	{
 		Instantiate(Resources.Load("Prefabs/GUI/WinScreens/LightsOut"), transform.position, Quaternion.identity);
         directLight.SetActive(false);
+	}
 
+	public void CeilingDoor()
+	{
+		Instantiate(Resources.Load("Prefabs/GUI/WinScreens/CeilingEscapeWin"), transform.position, Quaternion.identity);
 	}
 
     IEnumerator killFadeIn(String text)
