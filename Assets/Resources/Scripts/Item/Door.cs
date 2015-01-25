@@ -5,7 +5,10 @@ public class Door : MonoBehaviour
 {
 
     public float health = 300;
-    
+    private Transform bitBroken;
+    private Transform veryBroken;
+    private Transform completelyBroken;
+
 	// Use this for initialization
 	void Start () {
 	
