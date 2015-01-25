@@ -11,6 +11,7 @@ GameObject:
   - 95: {fileID: 9530092}
   - 54: {fileID: 5430092}
   - 65: {fileID: 6530092}
+  - 65: {fileID: 6578914}
   m_Layer: 0
   m_Name: sword
   m_TagString: Untagged
@@ -59,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.01000023, y: 1.13999999, z: 6.51000023}
+  m_LocalPosition: {x: -1.34287095, y: 1.31124282, z: -8.27509308}
   m_LocalScale: {x: .25, y: .25, z: .25}
   m_Children:
   - {fileID: 430090}
@@ -169,8 +170,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: .936589837, y: 1.31479442, z: .239075586}
+  m_Center: {x: -.179662228, y: -.0645370483, z: 3.81469727e-06}
+--- !u!65 &6578914
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .503286004, y: 3.49188232, z: .18623279}
+  m_Center: {x: .0369896889, y: 2.35562229, z: .0052947998}
 --- !u!95 &9530092
 Animator:
   serializedVersion: 3
