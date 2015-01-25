@@ -943,7 +943,7 @@ Transform:
   - {fileID: 193264133}
   - {fileID: 1362710630}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!54 &595931282
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ Transform:
   - {fileID: 1563770772}
   - {fileID: 1384646067}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &675662862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,7 +2494,7 @@ Transform:
   - {fileID: 1606416419}
   - {fileID: 1384611139}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1293451598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3052,6 +3052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f7b74bdc9444e429760578b3ded949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_motion: {fileID: 1289069830}
+  player: {fileID: 675662861}
+  particles: {fileID: 1502403445}
 --- !u!199 &1502403444
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -3096,10 +3099,10 @@ ParticleSystem:
   startDelay: 0
   speed: 1
   randomSeed: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   InitialModule:
     enabled: 1
     startLifetime:
@@ -3286,16 +3289,11 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startRotation:
-      scalar: 0
+      scalar: 1.57079625
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -3310,15 +3308,10 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    gravityModifier: 0
+      minMaxState: 3
+    gravityModifier: 1
     inheritVelocity: 0
     maxNumParticles: 1000
   ShapeModule:
@@ -3415,9 +3408,9 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 1
   RotationModule:
-    enabled: 0
+    enabled: 1
     curve:
-      scalar: .785398185
+      scalar: .785398126
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3968,9 +3961,9 @@ ParticleSystem:
       minMaxState: 1
     range: {x: 0, y: 1}
   RotationBySpeedModule:
-    enabled: 0
+    enabled: 1
     curve:
-      scalar: .785398185
+      scalar: .785398126
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4101,8 +4094,8 @@ ParticleSystem:
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
-    type: 0
+    enabled: 1
+    type: 1
     plane0: {fileID: 0}
     plane1: {fileID: 0}
     plane2: {fileID: 0}
@@ -4117,7 +4110,7 @@ ParticleSystem:
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
-    quality: 0
+    quality: 1
     voxelSize: .5
     collisionMessages: 0
   SubModule:
@@ -4795,7 +4788,7 @@ Transform:
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1637893581
 GameObject:
   m_ObjectHideFlags: 0
@@ -5341,6 +5334,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.maxCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.minCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 459436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
       propertyPath: m_LocalPosition.x
       value: .624000013
@@ -5373,6 +5374,82 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: ExternalForcesModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: CollisionModule.quality
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: RotationBySpeedModule.curve.scalar
+      value: .785398126
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: RotationBySpeedModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: RotationModule.curve.scalar
+      value: .785398126
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.gravityModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 1.57079625
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: InitialModule.startRotation.minCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: ColorModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19859436, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11460608, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: player_motion
+      value: 
+      objectReference: {fileID: 1289069830}
+    - target: {fileID: 11460608, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 1502403445}
+    - target: {fileID: 11460608, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 675662861}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 047554e8a2d77cb40a49908dbfb9bf73, type: 2}
   m_RootGameObject: {fileID: 1502403442}
