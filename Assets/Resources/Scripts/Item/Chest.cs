@@ -22,6 +22,7 @@ public class Chest : MonoBehaviour
 		{
 			opened = true;
 			this.GetComponent<Animator>().SetTrigger("open");
+            GameObject.Find("WinHandler").GetComponent<WinConditions>().chestOpen();
 		}
 	}
 }
