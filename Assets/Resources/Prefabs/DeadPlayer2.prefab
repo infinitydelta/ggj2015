@@ -105,10 +105,10 @@ Camera:
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: .5
-    y: 0
-    width: .5
-    height: 1
+    x: .504999995
+    y: .00499999989
+    width: .49000001
+    height: .99000001
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
@@ -117,7 +117,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294966271
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

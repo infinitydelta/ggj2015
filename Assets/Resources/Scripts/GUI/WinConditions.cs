@@ -15,12 +15,13 @@ public class WinConditions : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 
     public void playerOneWinsKill()
     {
-        
+        GameObject temp = (GameObject)Instantiate(title, title.transform.position, Quaternion.identity);
+        temp.GetComponent<
     }
 
     public void playerTwoWinsKill()

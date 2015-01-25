@@ -29,9 +29,9 @@ GameObject:
   - 136: {fileID: 13600000}
   - 114: {fileID: 11400004}
   - 54: {fileID: 5400000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11485106}
+  - 114: {fileID: 11461730}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player
@@ -124,8 +124,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.69000006, y: 1.99000001, z: -13.6300001}
+  m_LocalRotation: {x: 0, y: -.718766272, z: 0, w: .695251882}
+  m_LocalPosition: {x: 7.69000006, y: 1.01699996, z: -13.6300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -195,10 +195,10 @@ Camera:
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: .5
-    height: 1
+    x: .00499999989
+    y: .00499999989
+    width: .49000001
+    height: .99000001
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
@@ -323,29 +323,11 @@ MonoBehaviour:
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
   floorYPosition: .5
-  ceilingYPosition: 8
-  wallMinXPosition: -4
-  wallMaxXPosition: 4
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0409781facf19b740ad0cf1404c7ead9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pcam: {fileID: 2000000}
-  forward_move_speed: 1000
-  backward_move_speed: 800
-  strafe_move_speed: 800
-  right_left_look_speed: 5
-  up_down_look_speed: 5
-  look_bounds: 60
-  jump_force: 2000
-  controllerNumber: 1
+  ceilingYPosition: 6.4000001
+  wallMinXPosition: -1.5
+  wallMaxXPosition: 10.3299999
+  wallMinZPosition: -17.7000008
+  wallMaxZPosition: -5.80000019
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,6 +360,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_motion: {fileID: 11400004}
+--- !u!114 &11461730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3abe44865b015419439c9e95abcf47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frameDuration: .5
+  name: bread
 --- !u!114 &11485106
 MonoBehaviour:
   m_ObjectHideFlags: 1
