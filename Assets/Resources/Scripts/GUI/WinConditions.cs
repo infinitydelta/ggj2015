@@ -24,6 +24,11 @@ public class WinConditions : MonoBehaviour
         Instantiate(Resources.Load("Prefabs/GUI/WinScreens/Player2Win"), transform.position, Quaternion.identity);
     }
 
+    public void doorWin()
+    {
+        
+    }
+
     public void chestOpen()
     {
         
