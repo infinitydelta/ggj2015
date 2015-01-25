@@ -18,7 +18,7 @@ public class Remote : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		//Debug.Log (other.name);
-		if(numbatteries < 2 && other.name == "aabattery")
+		if(numbatteries < 2 && other.name == "AABattery")
 		{
 			other.gameObject.transform.parent = this.transform;
 			this.rigidbody.mass += other.rigidbody.mass;
