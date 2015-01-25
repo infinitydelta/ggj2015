@@ -18,6 +18,9 @@ public class LightBulb : MonoBehaviour {
         if (col.gameObject.tag != "Player" && (col.gameObject.GetComponent<ObjectScript>()!=null||GetComponent<ObjectScript>()!=null))
         {
             GameObject.Find("WinHandler").GetComponent<WinConditions>().numLightbulbs--;
+			if(GameObject.Find("WinHandler").GetComponent<WinConditions>().numLightbulbs==0){
+				GameObject.Find("WinHandler").GetComponent<WinConditions>().lightsOut();
+			}
             Destroy(gameObject);
         }
     }

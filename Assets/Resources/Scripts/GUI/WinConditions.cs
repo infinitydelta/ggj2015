@@ -43,6 +43,11 @@ public class WinConditions : MonoBehaviour
         Instantiate(Resources.Load("Prefabs/GUI/WinScreens/BabyWin"), transform.position, Quaternion.identity);
     }
 
+	public void lightsOut()
+	{
+		Instantiate(Resources.Load("Prefabs/GUI/WinScreens/LightsOut"), transform.position, Quaternion.identity);
+	}
+
     IEnumerator killFadeIn(String text)
     {
         yield return new WaitForEndOfFrame();
