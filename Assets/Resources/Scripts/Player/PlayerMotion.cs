@@ -93,7 +93,7 @@ public class PlayerMotion : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            if(col.transform.position.y<transform.position.y)
+            if(col.transform.position.y<transform.position.y-0.5)
                 onOtherPlayer = true;
             else
             {
