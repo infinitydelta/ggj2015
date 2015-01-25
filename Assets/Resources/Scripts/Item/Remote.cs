@@ -23,6 +23,15 @@ public class Remote : MonoBehaviour
 			other.gameObject.transform.parent = this.transform;
 			this.rigidbody.mass += other.rigidbody.mass;
 			Destroy (other.gameObject.rigidbody);
+			if(numbatteries == 0)
+			{
+				other.transform.localPosition = new Vector3(-0.01134826f,-0.04417972f,-0.004475062f);
+			}
+			else
+			{
+				other.transform.localPosition = new Vector3(0.01134826f,-0.04417972f,-0.004475062f);
+			}
+			other.transform.rotation = this.transform.rotation;
 			numbatteries++;
 		}
 	}
