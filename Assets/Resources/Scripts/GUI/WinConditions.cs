@@ -21,7 +21,7 @@ public class WinConditions : MonoBehaviour
     public void playerOneWinsKill()
     {
         GameObject temp = (GameObject)Instantiate(title, title.transform.position, Quaternion.identity);
-        temp.GetComponent<
+        //temp.GetComponent<
     }
 
     public void playerTwoWinsKill()
