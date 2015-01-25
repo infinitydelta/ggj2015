@@ -42,6 +42,7 @@ public class PlayerGrab : MonoBehaviour {
                         Physics.IgnoreCollision(col, collider, false);
                     }
                     myGrabbedGameObject.rigidbody.AddForce(throwForce * pcam.transform.forward);
+                    myGrabbedGameObject.AddComponent<ObjectScript>();
                     myGrabbedGameObject = null;
                     itemIsGrabbed = false;
                 }

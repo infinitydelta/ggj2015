@@ -23,10 +23,16 @@ public class PlayerHealth : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag != "Player" && col.gameObject.tag != "Environment" && col.rigidbody != null && col.rigidbody.velocity.magnitude>damageVelCutoff)
+        if (col.gameObject.tag != "Player" && col.gameObject.tag != "Environment" && col.rigidbody != null)
         {
-            
-            health -= col.relativeVelocity.magnitude * col.rigidbody.mass;
+            /*ObjectScript temp = col.gameObject.AddComponent<ObjectScript>();
+            temp.parent = this;
+            temp.damage = col.relativeVelocity.magnitude*col.rigidbody.mass;*/
+
+            if(col.gameObject.GetComponent<ObjectScript>()!=null)
+            {
+                health -= col.relativeVelocity.magnitude*col.gameObject.rigidbody.mass;
+            }
         }
     }
 }
