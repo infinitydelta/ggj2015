@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: 03f3de4761307744a95e10c05ffc1684
+guid: 128346c1f9ede504b9f774f6e5929c1d
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: backing
-    100002: frame
+    100000: Cube.001
+    100002: Cylinder
     100004: //RootNode
-    400000: backing
-    400002: frame
+    400000: Cube.001
+    400002: Cylinder
     400004: //RootNode
-    2300000: backing
-    2300002: frame
-    3300000: backing
-    3300002: frame
-    4300000: frame
-    4300002: backing
+    2300000: Cube.001
+    2300002: Cylinder
+    3300000: Cube.001
+    3300002: Cylinder
+    4300000: Cylinder
+    4300002: Cube.001
     9500000: //RootNode
   materials:
     importMaterials: 0
