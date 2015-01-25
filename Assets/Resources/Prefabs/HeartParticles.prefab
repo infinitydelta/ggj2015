@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 459436}
   - 198: {fileID: 19859436}
   - 199: {fileID: 19959436}
+  - 114: {fileID: 11460608}
   m_Layer: 0
   m_Name: HeartParticles
   m_TagString: Untagged
@@ -24,11 +25,22 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159436}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 3.26999998, y: .879999995, z: -9.86999989}
+  m_LocalPosition: {x: .624000013, y: 1.12199998, z: -11.5129995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11460608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f7b74bdc9444e429760578b3ded949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19859436
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -281,7 +293,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 0
+      scalar: 30
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -321,7 +333,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 1
+    m_BurstCount: 0
   SizeModule:
     enabled: 1
     curve:
