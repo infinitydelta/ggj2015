@@ -80,18 +80,25 @@ public class PlayerGrab : MonoBehaviour {
 	            myGrabbedGameObject.rigidbody.useGravity = false;
                 foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>())
                 {
-                    Physics.IgnoreCollision(col, collider, false);
+                    Physics.IgnoreCollision(col, collider, true);
                 }
                 foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>())
                 {
-                    Physics.IgnoreCollision(col, collider, false);
+                    Physics.IgnoreCollision(col, collider, true);
                 }
 
 	            //Break grab if object is moving violently
 	            if (myGrabbedGameObject.rigidbody.velocity.magnitude > grabBreakTolerance)
 	            {
 	                myGrabbedGameObject.rigidbody.useGravity = true;
-	                Physics.IgnoreCollision(myGrabbedGameObject.collider, collider, false);
+                    foreach (Collider col in myGrabbedGameObject.GetComponents<Collider>())
+                    {
+                        Physics.IgnoreCollision(col, collider, false);
+                    }
+                    foreach (Collider col in myGrabbedGameObject.GetComponentsInChildren<Collider>())
+                    {
+                        Physics.IgnoreCollision(col, collider, false);
+                    }
 	                myGrabbedGameObject = null;
 	                itemIsGrabbed = false;
 	            }

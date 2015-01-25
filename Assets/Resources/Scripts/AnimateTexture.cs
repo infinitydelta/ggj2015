@@ -14,12 +14,16 @@ public class AnimateTexture : MonoBehaviour
     private int curFrame;
     private GameObject otherPlayer;
     private Camera otherCamera;
+    private Quaternion lookTarget;
     Vector3 origScale;
     GameObject child;
     private IEnumerator curEnum;
     private bool idle = false;
     private Texture deadFrame;
     private bool isDead;
+    private float angleBetween;
+    private float dotAngle;
+    private float rightAngle;
 
     enum directions
     {
@@ -71,10 +75,14 @@ public class AnimateTexture : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        
-        child.transform.LookAt(transform.position + otherCamera.transform.rotation * Vector3.back,otherCamera.transform.rotation * Vector3.up);
-        float angleBetween = Vector3.Angle(transform.forward, otherPlayer.transform.forward);
-        float dotAngle = Vector3.Dot(transform.forward, otherPlayer.transform.forward);
+        if (otherCamera != null)
+            lookTarget = otherCamera.transform.rotation;
+        child.transform.LookAt(transform.position + lookTarget * Vector3.back, lookTarget * Vector3.up);
+        if (otherPlayer != null)
+        {
+            angleBetween = Vector3.Angle(transform.forward, otherPlayer.transform.forward);
+            dotAngle = Vector3.Dot(transform.forward, otherPlayer.transform.forward);
+        }
 	    if (!isDead)
 	    {
 	        if (angleBetween > 135 && curFrameStart != (int) directions.front)
@@ -116,7 +124,8 @@ public class AnimateTexture : MonoBehaviour
 	            {
 	                mat.SetTexture(0, idleFrames[(int) directions.side]);
 	            }
-	            float rightAngle = Vector3.Angle(otherPlayer.transform.right, transform.forward);
+                if (otherPlayer != null)
+	                rightAngle = Vector3.Angle(otherPlayer.transform.right, transform.forward);
 	            if (rightAngle > 90)
 	                child.transform.localScale = new Vector3(-1*origScale.x, origScale.y, origScale.z);
 	            else

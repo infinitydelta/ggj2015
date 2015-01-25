@@ -63,7 +63,7 @@ GameObject:
   - 54: {fileID: 5425818}
   - 114: {fileID: 11435776}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11429670}
+  - 114: {fileID: 11465262}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -82,7 +82,6 @@ GameObject:
   - 20: {fileID: 2025818}
   - 92: {fileID: 9225818}
   - 124: {fileID: 12425818}
-  - 81: {fileID: 8125818}
   m_Layer: 9
   m_Name: PlayerCam
   m_TagString: MainCamera
@@ -114,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37139533e-08}
-  m_LocalPosition: {x: 0, y: -.828999996, z: .0879999995}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -125,8 +124,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 0, y: -.000109672939, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92206353e-05, y: .478501916, z: -.0879999995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -301,13 +300,6 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!81 &8125818
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125854}
-  m_Enabled: 1
 --- !u!92 &9225818
 Behaviour:
   m_ObjectHideFlags: 1
@@ -341,8 +333,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pcam: {fileID: 2025818}
   forward_move_speed: 100
-  backward_move_speed: 50
-  strafe_move_speed: 50
+  backward_move_speed: 80
+  strafe_move_speed: 80
   right_left_look_speed: 5
   up_down_look_speed: 5
   look_bounds: 60
@@ -360,19 +352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_motion: {fileID: 11425818}
---- !u!114 &11429670
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26778c136816edb4384f64c60bc91e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageVelCutoff: .200000003
-  health: 35
 --- !u!114 &11435776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -384,11 +363,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac294e0cdc522942b6577dcee5d52de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 500
+  throwForce: 700
   grabBreakTolerance: 1.29999995
   grabEaseValue: 1.5
   grabAngularEaseValue: 8
   floorYPosition: -2
+--- !u!114 &11465262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0bdc0be7dc84404fa9fe4ca964859ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageVelCutoff: 6
+  health: 35
 --- !u!124 &12425818
 Behaviour:
   m_ObjectHideFlags: 1
@@ -407,7 +399,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .400000006
-  m_Center: {x: 0, y: -.699999988, z: 0}
+  m_Center: {x: 0, y: -.150000006, z: 0}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -420,7 +412,7 @@ CapsuleCollider:
   m_Radius: .5
   m_Height: .629999995
   m_Direction: 1
-  m_Center: {x: 0, y: -.479999989, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
