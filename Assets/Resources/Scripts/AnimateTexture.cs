@@ -6,7 +6,6 @@ public class AnimateTexture : MonoBehaviour
 {
     public float frameDuration = .5f;
     public String name = "bread";
-    public int playerID = 1;
 
     private Texture[] frames = new Texture[6];
     private Material mat;
@@ -44,7 +43,7 @@ public class AnimateTexture : MonoBehaviour
         StartCoroutine(playFrames());
 
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        if (players[0].GetComponent<PlayerMotion>().controllerNumber != playerID)
+        if (players[0].GetComponent<PlayerMotion>().controllerNumber != GetComponent<PlayerMotion>().controllerNumber)
         {
             otherPlayer = players[0];
         }

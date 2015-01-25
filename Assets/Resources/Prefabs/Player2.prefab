@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameDuration: .5
   name: bread
-  playerID: 1
+  playerID: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
