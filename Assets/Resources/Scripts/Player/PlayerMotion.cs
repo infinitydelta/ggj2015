@@ -110,7 +110,7 @@ public class PlayerMotion : MonoBehaviour {
         }
     }
 
-    bool getOnOtherPlayer()
+    public bool getOnOtherPlayer()
     {
         return onOtherPlayer;
     }

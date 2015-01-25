@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class LoveMaking : MonoBehaviour {
-
+	public PlayerMotion player_motion;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,6 +10,6 @@ public class LoveMaking : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		player_motion.getOnOtherPlayer ();
 	}
 }
