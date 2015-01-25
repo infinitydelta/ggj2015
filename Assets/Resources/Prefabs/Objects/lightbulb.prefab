@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11445112}
   m_Layer: 11
   m_Name: lightbulb
-  m_TagString: Untagged
+  m_TagString: Bulb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.96698666, y: 1.10749745, z: -11.1987658}
+  m_LocalPosition: {x: 1.53699994, y: 1.24300003, z: -8.83199978}
   m_LocalScale: {x: .0805099756, y: .0805099756, z: .0805099756}
   m_Children:
   - {fileID: 445114}
