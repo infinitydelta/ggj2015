@@ -25,7 +25,8 @@ public class Title : MonoBehaviour
         {
             if (reload)
                 Application.LoadLevel(Application.loadedLevel);
-            Destroy(gameObject);
+            else
+                Destroy(gameObject);
         }
     }
 
