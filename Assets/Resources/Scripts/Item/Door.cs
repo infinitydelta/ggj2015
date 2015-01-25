@@ -10,11 +10,13 @@ public class Door : MonoBehaviour
     private Transform bitBroken;
     private Transform veryBroken;
     private Transform completelyBroken;
+    private Transform knob;
     private GameObject curEnabled;
 
 	// Use this for initialization
 	void Start ()
 	{
+	    knob = transform.FindChild("Cylinder");
 	    maxHealth = health;
 	    bitBroken = transform.FindChild("DoorBroke1");
 	    veryBroken = transform.FindChild("DoorBroke2");
@@ -57,6 +59,7 @@ public class Door : MonoBehaviour
         //unfinished, add broken up mesh then break apart in script when thats in
         completelyBroken.gameObject.SetActive(true);
         veryBroken.gameObject.SetActive(false);
+        Destroy(knob.gameObject);
         Destroy(this);
     }
 
