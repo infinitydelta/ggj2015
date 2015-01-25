@@ -19,8 +19,6 @@ public class AnimateTexture : MonoBehaviour
     GameObject child;
     private IEnumerator curEnum;
     private bool idle = false;
-    private Texture deadFrame;
-    private bool isDead;
     private float angleBetween;
     private float dotAngle;
     private float rightAngle;
@@ -37,7 +35,6 @@ public class AnimateTexture : MonoBehaviour
     void Start ()
     {
         child = transform.FindChild("Billboard").gameObject;
-        deadFrame = Resources.Load<Texture>("Sprites/" + name + "_dead");
 
         origScale = transform.localScale;
         mat = GetComponentInChildren<Renderer>().material;
@@ -83,68 +80,65 @@ public class AnimateTexture : MonoBehaviour
             angleBetween = Vector3.Angle(transform.forward, otherPlayer.transform.forward);
             dotAngle = Vector3.Dot(transform.forward, otherPlayer.transform.forward);
         }
-	    if (!isDead)
+	    if (angleBetween > 135 && curFrameStart != (int) directions.front)
 	    {
-	        if (angleBetween > 135 && curFrameStart != (int) directions.front)
-	        {
 
-	            curFrameStart = (int) directions.front;
-	            curFrame = curFrameStart;
-	            if (idle)
-	            {
-	                mat.SetTexture(0, frames[(int) directions.front]);
-	            }
-	            else
-	            {
-	                mat.SetTexture(0, idleFrames[(int) directions.front]);
-	            }
-	        }
-	        else if ((angleBetween < 45) && curFrameStart != (int) directions.back)
+	        curFrameStart = (int) directions.front;
+	        curFrame = curFrameStart;
+	        if (idle)
 	        {
-	            curFrameStart = (int) directions.back;
-	            curFrame = curFrameStart;
-	            if (idle)
-	            {
-	                mat.SetTexture(0, frames[(int) directions.back]);
-	            }
-	            else
-	            {
-	                mat.SetTexture(0, idleFrames[(int) directions.back]);
-	            }
+	            mat.SetTexture(0, frames[(int) directions.front]);
 	        }
-	        else if (angleBetween > 45 && angleBetween < 135 && curFrameStart != (int) directions.side)
+	        else
 	        {
-	            curFrameStart = (int) directions.side;
-	            curFrame = (int) directions.side;
-	            if (idle)
-	            {
-	                mat.SetTexture(0, frames[(int) directions.side]);
-	            }
-	            else
-	            {
-	                mat.SetTexture(0, idleFrames[(int) directions.side]);
-	            }
-                if (otherPlayer != null)
-	                rightAngle = Vector3.Angle(otherPlayer.transform.right, transform.forward);
-	            if (rightAngle > 90)
-	                child.transform.localScale = new Vector3(-1*origScale.x, origScale.y, origScale.z);
-	            else
-	            {
-	                child.transform.localScale = new Vector3(origScale.x, origScale.y, origScale.z);
-	            }
+	            mat.SetTexture(0, idleFrames[(int) directions.front]);
 	        }
+	    }
+	    else if ((angleBetween < 45) && curFrameStart != (int) directions.back)
+	    {
+	        curFrameStart = (int) directions.back;
+	        curFrame = curFrameStart;
+	        if (idle)
+	        {
+	            mat.SetTexture(0, frames[(int) directions.back]);
+	        }
+	        else
+	        {
+	            mat.SetTexture(0, idleFrames[(int) directions.back]);
+	        }
+	    }
+	    else if (angleBetween > 45 && angleBetween < 135 && curFrameStart != (int) directions.side)
+	    {
+	        curFrameStart = (int) directions.side;
+	        curFrame = (int) directions.side;
+	        if (idle)
+	        {
+	            mat.SetTexture(0, frames[(int) directions.side]);
+	        }
+	        else
+	        {
+	            mat.SetTexture(0, idleFrames[(int) directions.side]);
+	        }
+            if (otherPlayer != null)
+	            rightAngle = Vector3.Angle(otherPlayer.transform.right, transform.forward);
+	        if (rightAngle > 90)
+	            child.transform.localScale = new Vector3(-1*origScale.x, origScale.y, origScale.z);
+	        else
+	        {
+	            child.transform.localScale = new Vector3(origScale.x, origScale.y, origScale.z);
+	        }
+	    }
 
-	        if (idle && rigidbody.velocity.magnitude < 3)
-	        {
-	            mat.SetTexture(0, frames[curFrame]);
-	            idle = false;
+	    if (idle && rigidbody.velocity.magnitude < 0.01f)
+	    {
+	        mat.SetTexture(0, frames[curFrame]);
+	        idle = false;
 
-	        }
-	        else if (!idle && rigidbody.velocity.magnitude > 3)
-	        {
-	            mat.SetTexture(0, idleFrames[curFrame]);
-	            idle = true;
-	        }
+	    }
+        else if (!idle && rigidbody.velocity.magnitude > 0.01f)
+	    {
+	        mat.SetTexture(0, idleFrames[curFrame]);
+	        idle = true;
 	    }
 	}
 
@@ -180,12 +174,5 @@ public class AnimateTexture : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void dead()
-    {
-        StopCoroutine(curEnum);
-        mat.SetTexture(0,deadFrame);
-        isDead = true;
     }
 }
