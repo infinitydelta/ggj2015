@@ -8,10 +8,15 @@ public class Door : MonoBehaviour
     private Transform bitBroken;
     private Transform veryBroken;
     private Transform completelyBroken;
+    private GameObject curEnabled;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+	    bitBroken = transform.FindChild("DoorBroke1");
+	    veryBroken = transform.FindChild("DoorBroke2");
+	    completelyBroken = transform.FindChild("DoorGibs");
+        curEnabled = transform.FindChild("Cube.001").gameObject;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +25,11 @@ public class Door : MonoBehaviour
 	    {
 	        GameObject.Find("WinHandler").GetComponent<WinConditions>().doorWin();
 	        Instantiate(Resources.Load<GameObject>("Prefabs/GUI/WinScreens/EscapeWin"));
-            breakApart();
+	        breakApart();
+	    }
+	    else if(health < health/3)
+	    {
+	        
 	    }
 	}
 
