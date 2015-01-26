@@ -30,11 +30,10 @@ public class Door : MonoBehaviour
 	    veryBroken = transform.FindChild("DoorBroke2");
 	    completelyBroken = transform.FindChild("DoorGibs");
         curEnabled = transform.FindChild("Cube.001").gameObject;
-<<<<<<< HEAD
+
 	    source = GetComponent<AudioSource>();
-=======
+
         myAudioSource = GetComponent<AudioSource>();
->>>>>>> origin/master
 	}
 	
 	// Update is called once per frame
