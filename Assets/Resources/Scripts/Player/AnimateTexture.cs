@@ -65,7 +65,7 @@ public class AnimateTexture : MonoBehaviour
         {
             otherPlayer = players[1];
         }
-                otherCamera = otherPlayer.GetComponentInChildren<Camera>();
+        otherCamera = otherPlayer.GetComponentInChildren<Camera>();
 
     }
 	
@@ -146,9 +146,11 @@ public class AnimateTexture : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log(curFrame);
             yield return new WaitForSeconds(frameDuration);
             if (curFrame == curFrameStart)
             {
+
                 if (idle)
                 {
                     curFrame ++;
