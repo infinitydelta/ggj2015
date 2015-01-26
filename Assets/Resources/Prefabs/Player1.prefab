@@ -522,11 +522,11 @@ AudioSource:
   m_GameObject: {fileID: 155096}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 7fe3f7c90623b824a9e5e5f46f6bb80a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4265f10a62429144eae8f47cc8c5af80, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f486f256c13050948bc943ac0352a794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: .319999993
+  sensitivity: .200000003
 --- !u!114 &11455100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0923359e9e352a4b9b11c7b7161ad67, type: 3}
   m_Name: 
